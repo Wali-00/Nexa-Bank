@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - KYC Verification</title>
+
+    <link rel="stylesheet" href="css/accountOfficer.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                ACCOUNT OFFICER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="account-officer-dashboard.html">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="account-officer-dashboard.html">
+                        📄 Account Applications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="account-officer-dashboard.html">
+                        👥 Customer Management
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kyc-verification.html" class="active">
+                        ✓ KYC Verification
+                    </a>
+                </li>
+
+                <li>
+                    <a href="account-officer-dashboard.html">
+                        💰 Add Money
+                    </a>
+                </li>
+
+                
+
+                <li>
+                    <a href="account-officer-reports.html">
+                        📈 Reports
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="login.html" id="kyc-logout-btn">
+                        🚪 Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+                        KYC Verification
+                    </h1>
+
+                    <p class="section-description">
+                        Review customer KYC submissions and update verification status.
+                    </p>
+
+                </div>
+
+                <div class="profile-box">
+                    💼 Account Officer
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>Total KYC</h3>
+
+                    <div class="stat-value" id="kyc-total">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Pending</h3>
+
+                    <div class="stat-value" id="kyc-pending">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Verified</h3>
+
+                    <div class="stat-value" id="kyc-verified">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Rejected</h3>
+
+                    <div class="stat-value" id="kyc-rejected">
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            KYC Records
+                        </h2>
+
+                        <p class="section-description">
+                            Filter and review submitted KYC records.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="kyc-refresh-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="kyc-filter-row">
+
+                    <input type="text" id="kyc-search" placeholder="Search customer ID, KYC ID or application ID">
+
+
+                    <select id="kyc-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="VERIFIED">
+                            Verified
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                        <option value="DOCUMENT_REQUIRED">
+                            Document Required
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="kyc-records-container" class="kyc-records-container">
+
+                    <div class="customer-search-loading">
+                        Loading KYC records...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- REVIEW MODAL -->
+
+    <div id="kyc-review-modal" class="kyc-modal">
+
+        <div class="kyc-modal-content">
+
+            <div class="kyc-modal-header">
+
+                <div>
+
+                    <span class="officer-customer-label">
+                        KYC Review
+                    </span>
+
+                    <h2 id="review-kyc-title">
+                        Review KYC
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-kyc-modal" class="customer-close-result">
+                    ✕ Close
+                </button>
+
+            </div>
+
+
+            <div class="kyc-review-summary">
+
+                <div>
+                    <span>KYC ID</span>
+                    <strong id="review-kyc-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Customer ID</span>
+                    <strong id="review-customer-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Application ID</span>
+                    <strong id="review-application-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Current Status</span>
+                    <strong id="review-current-status">-</strong>
+                </div>
+
+            </div>
+
+
+            <form id="kyc-review-form">
+
+                <div class="deposit-form-group">
+
+                    <label for="review-status">
+                        New Status
+                    </label>
+
+                    <select id="review-status" required>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="VERIFIED">
+                            Verified
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                        <option value="DOCUMENT_REQUIRED">
+                            Document Required
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="deposit-form-group">
+
+                    <label for="review-remarks">
+                        Remarks
+                    </label>
+
+                    <textarea id="review-remarks" rows="4" placeholder="Enter verification remarks..."></textarea>
+
+                </div>
+
+
+                <div class="deposit-actions">
+
+                    <button type="submit" id="submit-kyc-review" class="confirm-deposit-btn">
+                        ✓ Save Review
+                    </button>
+
+
+                    <button type="button" id="cancel-kyc-review" class="cancel-deposit-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="kyc-review-message" class="deposit-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/kyc-verification.js"></script>
+
+</body>
+
+</html>

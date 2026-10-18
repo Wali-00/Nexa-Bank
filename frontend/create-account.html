@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa Bank - Create Account</title>
+    <link rel="stylesheet" href="css/createAccount.css">
+</head>
+
+<body>
+    <div class="panel" id="signup-section" style="padding:0;">
+        <div class="signup-wrap">
+            <div class="signup-hero">
+                <div class="logo">🏛 NEXA BANK</div>
+                <h2>Open your account in minutes.</h2>
+                <p>Join Nexa Bank and get a secure, fully digital account — apply online, get verified, and start
+                    banking.</p>
+                <div class="perk"><span class="dot"></span> No branch visit required to apply</div>
+                <div class="perk"><span class="dot"></span> Your application is reviewed by an Account Officer</div>
+                <div class="perk"><span class="dot"></span> KYC verification happens digitally</div>
+                <div class="perk"><span class="dot"></span> Get notified the moment your account is approved</div>
+            </div>
+            <div class="signup-form">
+                <h3>Create Account</h3>
+                <p class="sub">Tell us a bit about yourself to start your application.</p>
+                <div class="form-grid">
+                    <div class="field"><label>First Name</label><input placeholder="Tanvir" /></div>
+                    <div class="field"><label>Last Name</label><input placeholder="Ahmed" /></div>
+                    <div class="field"><label>Email</label><input placeholder="you@email.com" /></div>
+                    <div class="field"><label>Phone</label><input placeholder="+880 1XXX-XXXXXX" /></div>
+                    <div class="field"><label>Date of Birth</label><input type="date" id="dateOfBirth" /></div>
+                    <div class="field"><label>National ID (NID)</label><input placeholder="NID number" /></div>
+                    <div class="field full"><label>Address</label><input placeholder="House, Road, City" /></div>
+                    <div class="field"><label>Branch</label>
+                        <select>
+                            <option>Select nearest branch</option>
+                            <option>Dhanmondi Branch</option>
+                            <option>Gulshan Branch</option>
+                            <option>Uttara Branch</option>
+                            <option>Agrabad Branch</option>
+                        </select>
+                    </div>
+                    <div class="field"><label>Account Type</label>
+                        <select>
+                            <option>Select account type</option>
+                            <option>Savings</option>
+                            <option>Current</option>
+                            <option>Student</option>
+                            <option>Business</option>
+                        </select>
+                    </div>
+                    <div class="field"><label>Password</label><input placeholder="Create a password" type="password" />
+                    </div>
+                    <div class="field"><label>Confirm Password</label><input placeholder="Re-enter password"
+                            type="password" /></div>
+                </div>
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+
+                    <label for="terms">
+                        I agree to Nexa Bank's Terms of Service and consent
+                        to KYC verification of the information provided above.
+                    </label>
+                </div>
+                <button class="submit-btn">Submit Application</button>
+                <div class="have-account">Already have an account? <a href="login.html">Login</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Nexa Bank - Loans
+    </title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="loans.html" class="active">
+                        🏦 Loans
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+            <div class="topbar">
+
+                <h1>
+                    Loans
+                </h1>
+
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             INTRO
+        ================================================== -->
+
+            <div class="welcome-card">
+
+                <h2>
+                    Loan Management
+                </h2>
+
+                <p>
+                    Apply for a Nexa Bank loan, track your
+                    applications and repay your active loans online.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Applications
+                    </h3>
+
+                    <div class="value" id="total-loan-applications">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Active Loans
+                    </h3>
+
+                    <div class="value" id="active-loans">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Outstanding Loan
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="total-outstanding">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+             APPLY FOR LOAN
+        ================================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Apply for a Loan
+                    </h2>
+
+                </div>
+
+
+                <form id="loan-application-form">
+
+                    <div class="customer-grid">
+
+
+                        <!-- LOAN TYPE -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="loan-type-id">
+                                Loan Type
+                            </label>
+
+
+                            <select id="loan-type-id" required>
+
+                                <option value="">
+                                    Loading loan types...
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AMOUNT -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="requested-amount">
+                                Requested Amount
+                            </label>
+
+
+                            <input type="number" id="requested-amount" min="0.01" step="0.01"
+                                placeholder="Enter requested amount" required>
+
+                        </div>
+
+
+                        <!-- DURATION -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="duration-months">
+                                Duration (Months)
+                            </label>
+
+
+                            <input type="number" id="duration-months" min="1" placeholder="Enter duration" required>
+
+                        </div>
+
+
+                        <!-- MONTHLY INCOME -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="monthly-income">
+                                Monthly Income
+                            </label>
+
+
+                            <input type="number" id="monthly-income" min="0.01" step="0.01"
+                                placeholder="Enter monthly income" required>
+
+                        </div>
+
+
+                        <!-- EMPLOYMENT -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="employment">
+                                Employment
+                            </label>
+
+
+                            <input type="text" id="employment" placeholder="e.g. Software Engineer">
+
+                        </div>
+
+
+                        <!-- PURPOSE -->
+
+                        <div class="info-item" style="grid-column: 1 / -1;">
+
+                            <label class="info-label" for="loan-purpose">
+                                Purpose
+                            </label>
+
+
+                            <textarea id="loan-purpose" rows="3" placeholder="Describe why you need this loan"
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                     SELECTED LOAN TYPE DETAILS
+                ========================================== -->
+
+                    <div id="loan-type-details" class="loan-type-details" style="display:none;">
+
+                        <h3>
+                            Selected Loan Details
+                        </h3>
+
+
+                        <div class="loan-type-detail-grid">
+
+                            <div>
+
+                                <span>
+                                    Loan Type
+                                </span>
+
+                                <strong id="selected-loan-name">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Interest Rate
+                                </span>
+
+                                <strong id="selected-interest-rate">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Maximum Amount
+                                </span>
+
+                                <strong id="selected-max-amount">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Maximum Duration
+                                </span>
+
+                                <strong id="selected-max-duration">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="submit-loan-btn" class="update-btn">
+                            Submit Application
+                        </button>
+
+
+                        <button type="reset" id="clear-loan-btn" class="cancel-btn">
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <p id="loan-application-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- =================================================
+             LOAN APPLICATIONS
+        ================================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        My Loan Applications
+                    </h2>
+
+                </div>
+
+
+                <div id="loan-applications-list" class="loan-list">
+
+                    <p>
+                        Loading loan applications...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             CURRENT LOANS + ONLINE PAYMENT
+        ================================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            My Loans
+                        </h2>
+
+                        <p class="section-description">
+                            View your repayment schedule and pay
+                            installments directly from your Nexa Bank account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="loans-list" class="loan-list">
+
+                    <p>
+                        Loading loans...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+     CUSTOMER LOAN PAYMENT MODAL
+========================================================= -->
+
+    <div id="customer-loan-payment-modal" class="loan-payment-modal" style="display:none;">
+
+        <div class="loan-payment-modal-content">
+
+
+            <div class="loan-payment-modal-header">
+
+                <div>
+
+                    <span class="info-label">
+                        Online Loan Payment
+                    </span>
+
+                    <h2>
+                        Confirm Installment Payment
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-customer-loan-payment-modal" class="cancel-btn">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div class="loan-payment-summary">
+
+                <div>
+
+                    <span>
+                        Loan
+                    </span>
+
+                    <strong id="customer-payment-loan-id">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Installment
+                    </span>
+
+                    <strong id="customer-payment-installment-no">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Remaining Installment
+                    </span>
+
+                    <strong id="customer-payment-installment-amount">
+                        ৳0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Late Fee
+                    </span>
+
+                    <strong id="customer-payment-late-fee">
+                        ৳0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Payment
+                    </span>
+
+                    <strong id="customer-payment-total">
+                        ৳0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Due Date
+                    </span>
+
+                    <strong id="customer-payment-due-date">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="loan-payment-notice">
+
+                <strong>
+                    Automatic Account Selection
+                </strong>
+
+                <p>
+                    Nexa Bank will automatically use one of your
+                    ACTIVE accounts that has enough available balance.
+                </p>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <label class="info-label" for="customer-payment-description">
+                    Description
+                </label>
+
+
+                <textarea id="customer-payment-description" rows="3">
+Online loan installment payment
+            </textarea>
+
+            </div>
+
+
+            <div class="edit-actions">
+
+                <button type="button" id="confirm-customer-loan-payment-btn" class="update-btn">
+                    💳 Pay Now
+                </button>
+
+
+                <button type="button" id="cancel-customer-loan-payment-btn" class="cancel-btn">
+                    Cancel
+                </button>
+
+            </div>
+
+
+            <p id="customer-loan-payment-message" class="update-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/loans.js"></script>
+
+</body>
+
+</html>

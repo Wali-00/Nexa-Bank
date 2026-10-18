@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Cards</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html" class="active">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN
+        =========================================== -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    My Cards
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-card">
+
+                <h2>
+                    Card Management
+                </h2>
+
+                <p>
+                    View your Nexa Bank cards and
+                    recent card activity.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Cards
+                    </h3>
+
+                    <div class="value" id="total-cards">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Active Cards
+                    </h3>
+
+                    <div class="value" id="active-cards">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Recent Card Transactions
+                    </h3>
+
+                    <div class="value" id="total-card-transactions">
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CARDS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        My Cards
+                    </h2>
+
+                </div>
+
+
+                <div id="cards-container" class="cards-container">
+
+                    <p>
+                        Loading cards...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CARD TRANSACTIONS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Recent Card Activity
+                    </h2>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="dashboard-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Card</th>
+                                <th>Merchant</th>
+                                <th>Category</th>
+                                <th>Entry</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="card-transactions-body">
+
+                            <tr>
+
+                                <td colspan="7">
+                                    Loading card transactions...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/cards.js"></script>
+
+</body>
+
+</html>

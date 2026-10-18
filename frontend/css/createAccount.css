@@ -1,0 +1,695 @@
+
+/* =========================================================
+   NEXA BANK - CREATE ACCOUNT PAGE
+   Aesthetic UI - No HTML/JS changes required
+   ========================================================= */
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef4f7;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MAIN PANEL
+   ========================================================= */
+
+#signup-section {
+    min-height: 100vh;
+    padding: 0 !important;
+    display: flex;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   SIGNUP WRAPPER
+   ========================================================= */
+
+.signup-wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   LEFT HERO SECTION
+   ========================================================= */
+
+.signup-hero {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 65px 55px;
+
+    background:
+        radial-gradient(circle at 15% 15%,
+            rgba(126, 226, 189, 0.16),
+            transparent 30%),
+        linear-gradient(145deg,
+            #081c2e 0%,
+            #0b2c46 48%,
+            #087f5b 100%);
+
+    color: #ffffff;
+}
+
+
+/* Decorative circles */
+
+.signup-hero::before {
+    content: "";
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    right: -150px;
+    top: -120px;
+
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.signup-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    left: -120px;
+    bottom: -100px;
+
+    background: rgba(126, 226, 189, 0.07);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.signup-hero .logo {
+    position: relative;
+    z-index: 2;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 65px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.signup-hero h2 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 520px;
+
+    font-size: clamp(34px, 3.2vw, 52px);
+    line-height: 1.12;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.signup-hero>p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 520px;
+
+    color: #d5e3eb;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   PERKS
+   ========================================================= */
+
+.perk {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+
+    color: #dce9ef;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Green dot */
+
+.perk .dot {
+    flex-shrink: 0;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #7ee2bd;
+
+    box-shadow:
+        0 0 0 5px rgba(126, 226, 189, 0.10);
+}
+
+
+/* =========================================================
+   RIGHT FORM SECTION
+   ========================================================= */
+
+.signup-form {
+    width: 100%;
+
+    padding: 55px 70px;
+
+    background: #ffffff;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.signup-form h3 {
+    font-size: 30px;
+
+    font-weight: 750;
+
+    color: #102a43;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 8px;
+}
+
+
+.signup-form .sub {
+    color: #829ab1;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* Full width */
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.field label {
+    color: #334e68;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   INPUT + SELECT
+   ========================================================= */
+
+.field input,
+.field select {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d9e2e8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #f9fbfc;
+
+    color: #243b53;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.field input::placeholder {
+    color: #a0aec0;
+}
+
+
+/* Date */
+
+.field input[type="date"] {
+    color: #52667a;
+}
+
+
+/* Select */
+
+.field select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.field input:focus,
+.field select:focus {
+    background: #ffffff;
+
+    border-color: #087f5b;
+
+    box-shadow:
+        0 0 0 4px rgba(8, 127, 91, 0.09);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TERMS
+   ========================================================= */
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-top: 25px;
+
+    padding: 15px 16px;
+
+    background: #f7fafb;
+
+    border: 1px solid #e5edf1;
+
+    border-radius: 10px;
+}
+
+
+/* Checkbox */
+
+.terms input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    accent-color: #087f5b;
+
+    cursor: pointer;
+}
+
+
+/* Terms text */
+
+.terms label {
+    color: #61758a;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit-btn {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(135deg,
+            #087f5b,
+            #0a936b);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(8, 127, 91, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* Hover */
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(8, 127, 91, 0.25);
+
+    filter: brightness(1.03);
+}
+
+
+/* Active */
+
+.submit-btn:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 5px 12px rgba(8, 127, 91, 0.18);
+}
+
+
+/* Disabled */
+
+.submit-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+   ========================================================= */
+
+.have-account {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #829ab1;
+
+    font-size: 13px;
+}
+
+
+.have-account a {
+    color: #087f5b;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.have-account a:hover {
+    color: #065f46;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.signup-form::-webkit-scrollbar {
+    width: 7px;
+}
+
+.signup-form::-webkit-scrollbar-track {
+    background: #f4f7f9;
+}
+
+.signup-form::-webkit-scrollbar-thumb {
+    background: #c7d4dc;
+    border-radius: 10px;
+}
+
+.signup-form::-webkit-scrollbar-thumb:hover {
+    background: #9fb2bf;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .signup-wrap {
+        grid-template-columns: 38% 62%;
+    }
+
+    .signup-hero {
+        padding: 45px 35px;
+    }
+
+    .signup-hero h2 {
+        font-size: 38px;
+    }
+
+    .signup-form {
+        padding: 45px 40px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .signup-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-hero {
+        min-height: auto;
+
+        padding: 45px 35px;
+    }
+
+    .signup-hero .logo {
+        margin-bottom: 35px;
+    }
+
+    .signup-hero h2 {
+        font-size: 36px;
+    }
+
+    .signup-hero>p {
+        max-width: 700px;
+    }
+
+    .signup-form {
+        padding: 40px 35px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .signup-hero {
+        padding: 35px 22px;
+    }
+
+    .signup-hero .logo {
+        font-size: 19px;
+
+        margin-bottom: 30px;
+    }
+
+    .signup-hero h2 {
+        font-size: 31px;
+    }
+
+    .signup-hero>p {
+        font-size: 14px;
+    }
+
+    .perk {
+        font-size: 13px;
+    }
+
+    .signup-form {
+        padding: 32px 20px;
+    }
+
+    .signup-form h3 {
+        font-size: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .terms {
+        padding: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .signup-hero {
+        padding: 30px 18px;
+    }
+
+    .signup-hero h2 {
+        font-size: 27px;
+    }
+
+    .signup-form {
+        padding: 28px 16px;
+    }
+
+    .field input,
+    .field select {
+        height: 44px;
+    }
+
+    .submit-btn {
+        height: 48px;
+    }
+}

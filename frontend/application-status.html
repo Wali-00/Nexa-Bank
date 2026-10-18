@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Application Status</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="application-status-page">
+
+        <div class="application-status-container">
+
+
+            <!-- ==========================================
+             HEADER
+        =========================================== -->
+
+            <div class="application-status-header">
+
+                <div class="application-status-logo">
+                    🏛 NEXA BANK
+                </div>
+
+                <h1>
+                    Application Status
+                </h1>
+
+                <p>
+                    Track your account application
+                    and KYC verification progress.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+             TRACKING INFORMATION
+        =========================================== -->
+
+            <div class="tracking-summary">
+
+                <div>
+
+                    <span>
+                        Customer ID
+                    </span>
+
+                    <strong id="status-customer-id">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Application ID
+                    </span>
+
+                    <strong id="status-application-id">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        KYC ID
+                    </span>
+
+                    <strong id="status-kyc-id">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             PROGRESS
+        =========================================== -->
+
+            <div class="application-progress-card">
+
+                <h2>
+                    Application Progress
+                </h2>
+
+
+                <div class="application-progress">
+
+
+                    <div class="progress-step" id="progress-registration">
+
+                        <div class="progress-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Registration
+                            </strong>
+
+                            <span>
+                                Customer profile created
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-line" id="line-registration-application"></div>
+
+
+                    <div class="progress-step" id="progress-application">
+
+                        <div class="progress-icon">
+                            2
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Account Application
+                            </strong>
+
+                            <span id="progress-application-text">
+                                Waiting...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-line" id="line-application-kyc"></div>
+
+
+                    <div class="progress-step" id="progress-kyc">
+
+                        <div class="progress-icon">
+                            3
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                KYC Verification
+                            </strong>
+
+                            <span id="progress-kyc-text">
+                                Waiting...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-line" id="line-kyc-account"></div>
+
+
+                    <div class="progress-step" id="progress-account">
+
+                        <div class="progress-icon">
+                            4
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Account Approval
+                            </strong>
+
+                            <span id="progress-account-text">
+                                Waiting for approval
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             APPLICATION DETAILS
+        =========================================== -->
+
+            <div class="status-detail-card">
+
+                <div class="status-detail-header">
+
+                    <div>
+
+                        <span class="status-detail-label">
+                            Account Application
+                        </span>
+
+                        <h2>
+                            Application Details
+                        </h2>
+
+                    </div>
+
+
+                    <span id="application-status-badge" class="application-status-badge">
+                        LOADING
+                    </span>
+
+                </div>
+
+
+                <div class="status-info-grid">
+
+                    <div>
+
+                        <span>
+                            Application ID
+                        </span>
+
+                        <strong id="detail-application-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Customer ID
+                        </span>
+
+                        <strong id="detail-customer-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong id="detail-account-type">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Branch
+                        </span>
+
+                        <strong id="detail-branch">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Submitted At
+                        </span>
+
+                        <strong id="detail-submitted-at">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Rejection Reason
+                        </span>
+
+                        <strong id="detail-rejection-reason">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             KYC DETAILS
+        =========================================== -->
+
+            <div class="status-detail-card">
+
+                <div class="status-detail-header">
+
+                    <div>
+
+                        <span class="status-detail-label">
+                            Identity Verification
+                        </span>
+
+                        <h2>
+                            KYC Status
+                        </h2>
+
+                    </div>
+
+
+                    <span id="kyc-status-badge" class="application-status-badge">
+                        LOADING
+                    </span>
+
+                </div>
+
+
+                <div class="status-info-grid">
+
+                    <div>
+
+                        <span>
+                            KYC ID
+                        </span>
+
+                        <strong id="detail-kyc-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="detail-kyc-status">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Verified By
+                        </span>
+
+                        <strong id="detail-verified-by">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Verified At
+                        </span>
+
+                        <strong id="detail-verified-at">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-full-width">
+
+                        <span>
+                            Officer Remarks
+                        </span>
+
+                        <strong id="detail-kyc-remarks">
+                            No remarks
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             ACTION / NEXT STEP
+        =========================================== -->
+
+            <div id="application-next-step" class="application-next-step">
+
+                <div id="next-step-icon" class="next-step-icon">
+                    ⏳
+                </div>
+
+
+                <div>
+
+                    <h3 id="next-step-title">
+                        Checking your application...
+                    </h3>
+
+                    <p id="next-step-message">
+                        Please wait while Nexa Bank loads your application status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             ACTION BUTTONS
+        =========================================== -->
+
+            <div class="application-status-actions">
+
+                <button type="button" id="refresh-status-btn" class="kyc-submit-btn">
+                    ↻ Refresh Status
+                </button>
+
+
+                <button type="button" id="resubmit-kyc-btn" class="application-resubmit-btn" style="display:none;">
+                    📄 Resubmit KYC
+                </button>
+
+
+                <button type="button" id="go-login-btn" class="kyc-cancel-btn">
+                    Go to Login
+                </button>
+
+            </div>
+
+
+            <p id="application-status-message" class="kyc-submit-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/application-status.js"></script>
+
+</body>
+
+</html>

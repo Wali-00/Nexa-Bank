@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Bill Payments</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html" class="active">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    Bill Payments
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-card">
+
+                <h2>
+                    Pay Your Bills
+                </h2>
+
+                <p>
+                    Pay supported billers directly
+                    from your Nexa Bank account.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Payments
+                    </h3>
+
+                    <div class="value" id="total-bill-payments">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Paid
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="total-bill-amount">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT FORM -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        New Bill Payment
+                    </h2>
+
+                </div>
+
+
+                <form id="bill-payment-form">
+
+                    <div class="customer-grid">
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="bill-account">
+                                Pay From Account
+                            </label>
+
+                            <select id="bill-account" required>
+
+                                <option value="">
+                                    Select account
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Available Balance
+                            </span>
+
+                            <span class="info-value" id="bill-account-balance">
+                                ৳0.00
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="biller-id">
+                                Biller
+                            </label>
+
+                            <select id="biller-id" required>
+
+                                <option value="">
+                                    Loading billers...
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="customer-reference">
+                                Customer Reference
+                            </label>
+
+                            <input type="text" id="customer-reference"
+                                placeholder="e.g. Meter / Account / Subscriber No." required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="bill-amount">
+                                Amount
+                            </label>
+
+                            <input type="number" id="bill-amount" min="0.01" step="0.01"
+                                placeholder="Enter payment amount" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="pay-bill-btn" class="update-btn">
+                            🧾 Pay Bill
+                        </button>
+
+
+                        <button type="reset" id="clear-bill-btn" class="cancel-btn">
+                            ↺ Clear
+                        </button>
+
+                    </div>
+
+
+                    <p id="bill-payment-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- RECEIPT -->
+
+            <div class="section-card" id="bill-receipt-card" style="display: none;">
+
+                <div class="section-header">
+
+                    <h2>
+                        Payment Receipt
+                    </h2>
+
+                </div>
+
+
+                <div class="customer-grid">
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Bill Payment ID
+                        </span>
+
+                        <span class="info-value" id="receipt-bill-payment-id">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Transaction ID
+                        </span>
+
+                        <span class="info-value" id="receipt-transaction-id">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Reference Number
+                        </span>
+
+                        <span class="info-value" id="receipt-reference-no">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Amount
+                        </span>
+
+                        <span class="info-value" id="receipt-amount">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <span class="info-value" id="receipt-status">
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HISTORY -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Recent Bill Payments
+                    </h2>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="dashboard-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Biller</th>
+                                <th>Reference</th>
+                                <th>Account</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="bill-payments-body">
+
+                            <tr>
+
+                                <td colspan="6">
+                                    Loading bill payments...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/bills.js"></script>
+
+</body>
+
+</html>

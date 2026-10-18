@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Beneficiaries</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html" class="active">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+
+            <div class="topbar">
+
+                <h1>
+                    Nominees
+                </h1>
+
+                <div class="profile-box">
+                    👤
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- INTRO -->
+
+            <div class="welcome-card">
+
+                <h2>
+                    Manage Nominees
+                </h2>
+
+                <p>
+                    Add and manage trusted bank accounts
+                    for easier transfers.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Nominees
+                    </h3>
+
+                    <div class="value" id="total-Nominees">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Active Nominees
+                    </h3>
+
+                    <div class="value" id="active-Nominees">
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 ADD BENEFICIARY
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Add Nominee
+                    </h2>
+
+                </div>
+
+
+                <form id="beneficiary-form">
+
+                    <div class="customer-grid">
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="beneficiary-name">
+                                Nominee Name
+                            </label>
+
+                            <input type="text" id="beneficiary-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="bank-name">
+                                Bank Name
+                            </label>
+
+                            <input type="text" id="bank-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="account-number">
+                                Account Number
+                            </label>
+
+                            <input type="text" id="account-number" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="nickname">
+                                Nickname
+                            </label>
+
+                            <input type="text" id="nickname" placeholder="Optional">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="add-beneficiary-btn" class="update-btn">
+                            + Add Nominee
+                        </button>
+
+
+                        <button type="reset" class="cancel-btn">
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <p id="beneficiary-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- ==========================================
+                 BENEFICIARY LIST
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        My Nominees
+                    </h2>
+
+                </div>
+
+
+                <div id="beneficiary-list" class="beneficiary-list">
+
+                    <p>
+                        Loading Nominees...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 EDIT BENEFICIARY
+            =========================================== -->
+
+            <div class="section-card" id="edit-beneficiary-card" style="display: none;">
+
+                <div class="section-header">
+
+                    <h2>
+                        Edit Nominee
+                    </h2>
+
+                </div>
+
+
+                <form id="edit-beneficiary-form">
+
+                    <input type="hidden" id="edit-beneficiary-id">
+
+
+                    <div class="customer-grid">
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-beneficiary-name">
+                                Nominee Name
+                            </label>
+
+                            <input type="text" id="edit-beneficiary-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-bank-name">
+                                Bank Name
+                            </label>
+
+                            <input type="text" id="edit-bank-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-account-number">
+                                Account Number
+                            </label>
+
+                            <input type="text" id="edit-account-number" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-nickname">
+                                Nickname
+                            </label>
+
+                            <input type="text" id="edit-nickname">
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-status">
+                                Status
+                            </label>
+
+                            <select id="edit-status" required>
+
+                                <option value="ACTIVE">
+                                    ACTIVE
+                                </option>
+
+                                <option value="INACTIVE">
+                                    INACTIVE
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" class="update-btn">
+                            ✓ Update Nominee
+                        </button>
+
+
+                        <button type="button" id="cancel-beneficiary-edit" class="cancel-btn">
+                            ✕ Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/beneficiaries.js"></script>
+
+</body>
+
+</html>

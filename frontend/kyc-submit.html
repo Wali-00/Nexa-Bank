@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - KYC Verification</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="kyc-submit-page">
+
+        <div class="kyc-submit-card">
+
+
+            <!-- ==========================================
+             HEADER
+        =========================================== -->
+
+            <div class="kyc-submit-header">
+
+                <div class="kyc-submit-logo">
+                    🏛 NEXA BANK
+                </div>
+
+                <h1>
+                    KYC Verification
+                </h1>
+
+                <p>
+                    Upload your identity documents to continue
+                    your Nexa Bank account application.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+             STATUS ONLY
+             Customer/Application IDs are intentionally
+             not displayed to the customer.
+        =========================================== -->
+
+            <div class="kyc-public-status">
+
+                <div class="kyc-public-status-icon">
+                    📄
+                </div>
+
+                <div>
+
+                    <span>
+                        Verification Status
+                    </span>
+
+                    <strong>
+                        PENDING SUBMISSION
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+             KYC FORM
+        =========================================== -->
+
+            <form id="kyc-submit-form" enctype="multipart/form-data">
+
+                <div class="kyc-upload-grid">
+
+
+                    <!-- NID -->
+
+                    <div class="kyc-upload-card">
+
+                        <div class="kyc-upload-icon">
+                            🪪
+                        </div>
+
+                        <h3>
+                            NID Document
+                        </h3>
+
+                        <p>
+                            Upload a clear photo or scan of your
+                            National ID card.
+                        </p>
+
+
+                        <label for="nid-document" class="kyc-file-button">
+                            Choose NID File
+                        </label>
+
+
+                        <input type="file" id="nid-document" accept=".jpg,.jpeg,.png,.pdf" required>
+
+
+                        <div id="nid-file-name" class="kyc-selected-file">
+                            No file selected
+                        </div>
+
+
+                        <div id="nid-preview" class="kyc-file-preview"></div>
+
+                    </div>
+
+
+                    <!-- PHOTO -->
+
+                    <div class="kyc-upload-card">
+
+                        <div class="kyc-upload-icon">
+                            📷
+                        </div>
+
+                        <h3>
+                            Customer Photo
+                        </h3>
+
+                        <p>
+                            Upload a recent clear photograph of
+                            yourself.
+                        </p>
+
+
+                        <label for="photo-document" class="kyc-file-button">
+                            Choose Photo
+                        </label>
+
+
+                        <input type="file" id="photo-document" accept=".jpg,.jpeg,.png" required>
+
+
+                        <div id="photo-file-name" class="kyc-selected-file">
+                            No file selected
+                        </div>
+
+
+                        <div id="photo-preview" class="kyc-file-preview"></div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="kyc-upload-card">
+
+                        <div class="kyc-upload-icon">
+                            🏠
+                        </div>
+
+                        <h3>
+                            Address Proof
+                        </h3>
+
+                        <p>
+                            Upload a utility bill, official letter,
+                            or another accepted address document.
+                        </p>
+
+
+                        <label for="address-document" class="kyc-file-button">
+                            Choose Address File
+                        </label>
+
+
+                        <input type="file" id="address-document" accept=".jpg,.jpeg,.png,.pdf" required>
+
+
+                        <div id="address-file-name" class="kyc-selected-file">
+                            No file selected
+                        </div>
+
+
+                        <div id="address-preview" class="kyc-file-preview"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ======================================
+                 NOTE
+            ======================================= -->
+
+                <div class="kyc-submit-note">
+
+                    <strong>
+                        Before submitting
+                    </strong>
+
+                    <p>
+                        Upload clear and readable documents.
+                        Supported formats are JPG, JPEG, PNG and PDF.
+                        Your documents will be reviewed by a
+                        Nexa Bank Account Officer.
+                    </p>
+
+                </div>
+
+
+                <!-- ======================================
+                 BUTTONS
+            ======================================= -->
+
+                <div class="kyc-submit-actions">
+
+                    <button type="submit" id="submit-kyc-btn" class="kyc-submit-btn">
+                        ✓ Submit KYC
+                    </button>
+
+
+                    <button type="button" id="cancel-kyc-btn" class="kyc-cancel-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="kyc-submit-message" class="kyc-submit-message"></p>
+
+            </form>
+
+
+            <!-- ==========================================
+             SUCCESS
+        =========================================== -->
+
+            <div id="kyc-success-box" class="kyc-success-box" style="display:none;">
+
+                <div class="kyc-success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    KYC Submitted Successfully
+                </h2>
+
+                <p>
+                    Your documents have been submitted and
+                    are now waiting for Account Officer review.
+                </p>
+
+
+                <div class="kyc-success-simple-status">
+
+                    <span>
+                        Current Status
+                    </span>
+
+                    <strong>
+                        PENDING
+                    </strong>
+
+                </div>
+
+
+                <button type="button" id="go-status-btn" class="kyc-submit-btn">
+                    View Application Status
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/kyc-submit.js"></script>
+
+</body>
+
+</html>

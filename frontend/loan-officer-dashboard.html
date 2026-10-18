@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Loan Officer Dashboard</title>
+
+    <link rel="stylesheet" href="css/loanOfficer.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                LOAN OFFICER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="#" class="loan-nav-link active" data-section="loan-dashboard-section">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="loan-applications-section">
+                        📄 Loan Applications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="customer-loan-search-section">
+                        👤 Customer Loan Search
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="approved-loans-section">
+                        ✅ Approved Applications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="created-loans-section">
+                        💰 Created Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="active-loans-section">
+                        🏦 Active Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="repayment-monitoring-section">
+                        💳 Repayment Monitoring
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="loan-nav-link" data-section="loan-reports-section">
+                        📈 Reports
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="login.html" id="loan-logout-btn">
+                        🚪 Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+            <div class="topbar">
+
+                <h1>
+                    Loan Officer Dashboard
+                </h1>
+
+                <div class="profile-box">
+                    💼 Loan Officer
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+            <section id="loan-dashboard-section" class="loan-section active-section">
+
+                <div class="welcome-card">
+
+                    <h2>
+                        Welcome, Loan Officer
+                    </h2>
+
+                    <p>
+                        Review loan applications, create loans,
+                        manage disbursements and monitor repayments.
+                    </p>
+
+                </div>
+
+
+                <!-- APPLICATION STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Applications
+                        </h3>
+
+                        <div class="stat-value" id="loan-total-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Submitted
+                        </h3>
+
+                        <div class="stat-value" id="loan-submitted-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Approved
+                        </h3>
+
+                        <div class="stat-value" id="loan-approved-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Rejected
+                        </h3>
+
+                        <div class="stat-value" id="loan-rejected-applications">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOAN STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Created Loans
+                        </h3>
+
+                        <div class="stat-value" id="loan-created-count">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Awaiting Disbursement
+                        </h3>
+
+                        <div class="stat-value" id="loan-awaiting-disbursement-count">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Active Loans
+                        </h3>
+
+                        <div class="stat-value" id="loan-active-count">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Completed Loans
+                        </h3>
+
+                        <div class="stat-value" id="loan-completed-count">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p class="section-description">
+                                Access Loan Officer tools.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="loan-quick-actions">
+
+                        <button type="button" class="loan-quick-action" data-open-section="loan-applications-section">
+                            📄
+
+                            <strong>
+                                Review Applications
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action"
+                            data-open-section="customer-loan-search-section">
+                            👤
+
+                            <strong>
+                                Customer Loan Search
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action" data-open-section="approved-loans-section">
+                            ✅
+
+                            <strong>
+                                Approved Applications
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action" data-open-section="created-loans-section">
+                            💰
+
+                            <strong>
+                                Created Loans
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action" data-open-section="active-loans-section">
+                            🏦
+
+                            <strong>
+                                Active Loans
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action"
+                            data-open-section="repayment-monitoring-section">
+                            💳
+
+                            <strong>
+                                Repayment Monitoring
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="loan-quick-action" data-open-section="loan-reports-section">
+                            📈
+
+                            <strong>
+                                Reports
+                            </strong>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             LOAN APPLICATIONS
+        ================================================== -->
+
+            <section id="loan-applications-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Loan Applications
+                        </h2>
+
+                        <p class="section-description">
+                            Review and update loan application status.
+                        </p>
+
+                    </div>
+
+                    <button type="button" class="refresh-btn" id="refresh-loan-applications-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="loan-filter-row">
+
+                    <input type="text" id="loan-application-search"
+                        placeholder="Search application ID, customer ID or purpose" autocomplete="off">
+
+
+                    <select id="loan-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="SUBMITTED">
+                            Submitted
+                        </option>
+
+                        <option value="UNDER_REVIEW">
+                            Under Review
+                        </option>
+
+                        <option value="APPROVED">
+                            Approved
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Application ID</th>
+                                <th>Customer ID</th>
+                                <th>Loan Type</th>
+                                <th>Requested Amount</th>
+                                <th>Duration</th>
+                                <th>Monthly Income</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="loan-applications-body">
+
+                            <tr>
+                                <td colspan="8" class="message-row">
+                                    Loading loan applications...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             CUSTOMER LOAN SEARCH
+        ================================================== -->
+
+            <section id="customer-loan-search-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Loan Search
+                        </h2>
+
+                        <p class="section-description">
+                            Search customers and view all loans
+                            associated with them.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-customer-loan-search-btn">
+                        ↻ Refresh Customer Data
+                    </button>
+
+                </div>
+
+
+                <div class="loan-filter-row">
+
+                    <input type="text" id="customer-loan-search-input"
+                        placeholder="Customer ID, name, email, phone, NID, account number or loan ID"
+                        autocomplete="off">
+
+
+                    <button type="button" class="refresh-btn" id="customer-loan-search-btn">
+                        🔎 Search
+                    </button>
+
+                </div>
+
+
+                <p id="customer-loan-search-message" class="loan-message"></p>
+
+
+                <div id="customer-loan-search-results" class="approved-loan-container">
+
+                    <div class="loan-empty-state">
+                        Enter customer or loan information to search.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             APPROVED APPLICATIONS
+        ================================================== -->
+
+            <section id="approved-loans-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Approved Applications
+                        </h2>
+
+                        <p class="section-description">
+                            Convert approved applications into loans.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-approved-loans-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div id="approved-loan-container" class="approved-loan-container">
+
+                    <div class="message-row">
+                        Loading approved applications...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             CREATED LOANS
+        ================================================== -->
+
+            <section id="created-loans-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Created Loans
+                        </h2>
+
+                        <p class="section-description">
+                            View created loans and perform disbursement.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-created-loans-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="loan-filter-row">
+
+                    <input type="text" id="created-loan-search" placeholder="Search loan ID, customer ID or account"
+                        autocomplete="off">
+
+
+                    <select id="created-loan-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="APPROVED">
+                            Awaiting Disbursement
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="COMPLETED">
+                            Completed
+                        </option>
+
+                        <option value="DEFAULTED">
+                            Defaulted
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Loan ID</th>
+                                <th>Customer ID</th>
+                                <th>Loan Type</th>
+                                <th>Principal</th>
+                                <th>Outstanding</th>
+                                <th>EMI</th>
+                                <th>Account</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="created-loans-body">
+
+                            <tr>
+                                <td colspan="9" class="message-row">
+                                    Loading loans...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             ACTIVE LOANS
+        ================================================== -->
+
+            <section id="active-loans-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Active Loans
+                        </h2>
+
+                        <p class="section-description">
+                            Monitor active and defaulted loans and
+                            open their repayment schedules.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-active-loans-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="report-summary-grid">
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Active Loans
+                        </span>
+
+                        <strong id="active-loan-total">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Defaulted Loans
+                        </span>
+
+                        <strong id="defaulted-loan-total">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Total Principal
+                        </span>
+
+                        <strong id="active-loan-principal-total">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Total Outstanding
+                        </span>
+
+                        <strong id="active-loan-outstanding-total">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="loan-filter-row" style="margin-top:20px;">
+
+                    <input type="text" id="active-loan-search"
+                        placeholder="Search loan ID, customer, loan type or account" autocomplete="off">
+
+
+                    <select id="active-loan-status-filter">
+
+                        <option value="">
+                            Active + Defaulted
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="DEFAULTED">
+                            Defaulted
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Loan ID</th>
+                                <th>Customer</th>
+                                <th>Loan Type</th>
+                                <th>Principal</th>
+                                <th>Outstanding</th>
+                                <th>Interest</th>
+                                <th>EMI</th>
+                                <th>Account</th>
+                                <th>Disbursed</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="active-loans-body">
+
+                            <tr>
+
+                                <td colspan="11" class="message-row">
+                                    Loading active loans...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             REPAYMENT MONITORING
+        ================================================== -->
+
+            <section id="repayment-monitoring-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Repayment Monitoring
+                        </h2>
+
+                        <p class="section-description">
+                            Monitor installments and process repayments.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-repayments-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="report-summary-grid">
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Total Installments
+                        </span>
+
+                        <strong id="repayment-total-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="repayment-pending-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Paid
+                        </span>
+
+                        <strong id="repayment-paid-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Overdue
+                        </span>
+
+                        <strong id="repayment-overdue-count">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="loan-filter-row" style="margin-top:20px;">
+
+                    <input type="text" id="repayment-search" placeholder="Search loan ID or installment"
+                        autocomplete="off">
+
+
+                    <select id="repayment-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="PAID">
+                            Paid
+                        </option>
+
+                        <option value="OVERDUE">
+                            Overdue
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Payment ID</th>
+                                <th>Loan ID</th>
+                                <th>Installment</th>
+                                <th>Due Date</th>
+                                <th>Amount Due</th>
+                                <th>Amount Paid</th>
+                                <th>Late Fee</th>
+                                <th>Status</th>
+                                <th>Payment Date</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="repayment-body">
+
+                            <tr>
+
+                                <td colspan="10" class="message-row">
+                                    Loading repayment information...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             REPORTS
+        ================================================== -->
+
+            <section id="loan-reports-section" class="loan-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Loan Reports
+                        </h2>
+
+                        <p class="section-description">
+                            Summary of loan and repayment activity.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-loan-reports-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="report-summary-grid">
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Total Requested
+                        </span>
+
+                        <strong id="loan-report-total-requested">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Approved Amount
+                        </span>
+
+                        <strong id="loan-report-approved-amount">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Active Outstanding
+                        </span>
+
+                        <strong id="loan-report-outstanding">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Under Review
+                        </span>
+
+                        <strong id="loan-report-under-review">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Rejected
+                        </span>
+
+                        <strong id="loan-report-rejected">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Active Loans
+                        </span>
+
+                        <strong id="loan-report-active">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Paid Installments
+                        </span>
+
+                        <strong id="loan-report-paid-installments">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-summary-item">
+
+                        <span>
+                            Pending Installments
+                        </span>
+
+                        <strong id="loan-report-pending-installments">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+     REVIEW MODAL
+========================================================= -->
+
+    <div id="loan-review-modal" class="loan-modal">
+
+        <div class="loan-modal-content">
+
+            <div class="loan-modal-header">
+
+                <div>
+
+                    <span class="loan-small-label">
+                        Loan Application Review
+                    </span>
+
+                    <h2>
+                        Review Application
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-loan-review-modal" class="loan-close-btn">
+                    ✕ Close
+                </button>
+
+            </div>
+
+
+            <div class="loan-review-summary">
+
+                <div>
+                    <span>Application ID</span>
+                    <strong id="review-loan-application-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Customer ID</span>
+                    <strong id="review-loan-customer-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Requested Amount</span>
+                    <strong id="review-loan-amount">-</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong id="review-loan-status">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="loan-review-summary">
+
+                <div>
+                    <span>Duration</span>
+                    <strong id="review-loan-duration">-</strong>
+                </div>
+
+                <div>
+                    <span>Monthly Income</span>
+                    <strong id="review-loan-income">-</strong>
+                </div>
+
+                <div>
+                    <span>Employment</span>
+                    <strong id="review-loan-employment">-</strong>
+                </div>
+
+                <div>
+                    <span>Purpose</span>
+                    <strong id="review-loan-purpose">-</strong>
+                </div>
+
+            </div>
+
+
+            <form id="loan-review-form">
+
+                <div class="loan-form-group">
+
+                    <label for="new-loan-status">
+                        New Status
+                    </label>
+
+
+                    <select id="new-loan-status" required>
+
+                        <option value="SUBMITTED">
+                            Submitted
+                        </option>
+
+                        <option value="UNDER_REVIEW">
+                            Under Review
+                        </option>
+
+                        <option value="APPROVED">
+                            Approved
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="loan-form-group">
+
+                    <label for="loan-rejection-reason">
+                        Rejection Reason
+                    </label>
+
+                    <textarea id="loan-rejection-reason" rows="4" placeholder="Required only when rejecting"></textarea>
+
+                </div>
+
+
+                <div class="loan-modal-actions">
+
+                    <button type="submit" id="save-loan-review-btn" class="loan-primary-btn">
+                        ✓ Save Review
+                    </button>
+
+
+                    <button type="button" id="cancel-loan-review-btn" class="loan-secondary-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="loan-review-message" class="loan-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     CREATE LOAN MODAL
+========================================================= -->
+
+    <div id="create-loan-modal" class="loan-modal">
+
+        <div class="loan-modal-content">
+
+            <div class="loan-modal-header">
+
+                <div>
+
+                    <span class="loan-small-label">
+                        Approved Application
+                    </span>
+
+                    <h2>
+                        Create Loan
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-create-loan-modal" class="loan-close-btn">
+                    ✕ Close
+                </button>
+
+            </div>
+
+
+            <div class="loan-review-summary">
+
+                <div>
+                    <span>Application ID</span>
+                    <strong id="create-loan-application-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Customer ID</span>
+                    <strong id="create-loan-customer-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Requested Amount</span>
+                    <strong id="create-loan-requested-amount">-</strong>
+                </div>
+
+                <div>
+                    <span>Duration</span>
+                    <strong id="create-loan-duration">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="loan-create-warning">
+
+                <strong>
+                    Automatic Account Detection
+                </strong>
+
+                <p>
+                    Nexa Bank will automatically detect an ACTIVE
+                    account belonging to this customer.
+                </p>
+
+            </div>
+
+
+            <div id="loan-auto-account-preview" class="loan-account-preview" style="display:none;">
+
+                <div>
+                    <span>Detected Account</span>
+                    <strong id="loan-auto-account-number">-</strong>
+                </div>
+
+                <div>
+                    <span>Account ID</span>
+                    <strong id="loan-auto-account-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Available Balance</span>
+                    <strong id="loan-auto-account-balance">-</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong id="loan-auto-account-status">-</strong>
+                </div>
+
+            </div>
+
+
+            <p id="loan-auto-account-message" class="loan-message"></p>
+
+
+            <form id="create-loan-form">
+
+                <div class="loan-modal-actions">
+
+                    <button type="submit" id="confirm-create-loan-btn" class="loan-primary-btn" disabled>
+                        💰 Create Loan
+                    </button>
+
+
+                    <button type="button" id="cancel-create-loan-btn" class="loan-secondary-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="create-loan-message" class="loan-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     PAYMENT MODAL
+========================================================= -->
+
+    <div id="loan-payment-modal" class="loan-modal">
+
+        <div class="loan-modal-content">
+
+            <div class="loan-modal-header">
+
+                <div>
+
+                    <span class="loan-small-label">
+                        Installment Payment
+                    </span>
+
+                    <h2>
+                        Process Loan Payment
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-loan-payment-modal" class="loan-close-btn">
+                    ✕ Close
+                </button>
+
+            </div>
+
+
+            <div class="loan-review-summary">
+
+                <div>
+                    <span>Loan ID</span>
+                    <strong id="payment-loan-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Installment</span>
+                    <strong id="payment-installment-no">-</strong>
+                </div>
+
+                <div>
+                    <span>Remaining Installment</span>
+                    <strong id="payment-amount-due">-</strong>
+                </div>
+
+                <div>
+                    <span>Late Fee</span>
+                    <strong id="payment-late-fee">-</strong>
+                </div>
+
+                <div>
+                    <span>Total Payment</span>
+                    <strong id="payment-total-due">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="loan-create-warning">
+
+                <strong>
+                    Automatic Repayment Account
+                </strong>
+
+                <p>
+                    Nexa Bank will automatically find an ACTIVE
+                    customer account with enough balance for this payment.
+                </p>
+
+            </div>
+
+
+            <div id="payment-auto-account-preview" class="loan-account-preview" style="display:none;">
+
+                <div>
+                    <span>Detected Account</span>
+                    <strong id="payment-auto-account-number">-</strong>
+                </div>
+
+                <div>
+                    <span>Account ID</span>
+                    <strong id="payment-auto-account-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Available Balance</span>
+                    <strong id="payment-auto-account-balance">-</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong id="payment-auto-account-status">-</strong>
+                </div>
+
+            </div>
+
+
+            <p id="payment-auto-account-message" class="loan-message"></p>
+
+
+            <form id="loan-payment-form">
+
+                <div class="loan-form-group">
+
+                    <label for="payment-description">
+                        Description
+                    </label>
+
+                    <textarea id="payment-description" rows="3" placeholder="Loan installment payment"></textarea>
+
+                </div>
+
+
+                <div class="loan-modal-actions">
+
+                    <button type="submit" id="confirm-loan-payment-btn" class="loan-primary-btn" disabled>
+                        💳 Pay Installment
+                    </button>
+
+
+                    <button type="button" id="cancel-loan-payment-btn" class="loan-secondary-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="loan-payment-message" class="loan-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/loan-officer-dashboard.js"></script>
+
+</body>
+
+</html>

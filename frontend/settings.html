@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Settings</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html" class="active">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    Settings
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-card">
+
+                <h2>
+                    Account Settings
+                </h2>
+
+                <p>
+                    Manage your local dashboard preferences
+                    and current login session.
+                </p>
+
+            </div>
+
+
+            <!-- SESSION SUMMARY -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Session Information
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <div class="settings-info-box">
+
+                        <span>
+                            Customer ID
+                        </span>
+
+                        <strong id="settings-customer-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="settings-info-box">
+
+                        <span>
+                            User ID
+                        </span>
+
+                        <strong id="settings-user-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="settings-info-box">
+
+                        <span>
+                            Role
+                        </span>
+
+                        <strong id="settings-role">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="settings-info-box">
+
+                        <span>
+                            Account Number
+                        </span>
+
+                        <strong id="settings-account-number">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPEARANCE -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Appearance
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <h3>
+                            Dashboard Theme
+                        </h3>
+
+                        <p>
+                            Choose between the default
+                            light theme and dark mode.
+                        </p>
+
+                    </div>
+
+
+                    <select id="theme-select">
+
+                        <option value="light">
+                            Light
+                        </option>
+
+                        <option value="dark">
+                            Dark
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATION PREFERENCE -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Notification Preference
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <h3>
+                            Dashboard Notification Alerts
+                        </h3>
+
+                        <p>
+                            Keep visual notification alerts
+                            enabled on this browser.
+                        </p>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox" id="notification-toggle">
+
+                        <span class="settings-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <p class="settings-note">
+
+                    This preference is stored only in this browser.
+                    It does not change notification records in the database.
+
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE LINK -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Profile Management
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-action-row">
+
+                    <div>
+
+                        <h3>
+                            Update Personal Information
+                        </h3>
+
+                        <p>
+                            Change your email, phone,
+                            address, occupation and other profile details.
+                        </p>
+
+                    </div>
+
+
+                    <a href="profile.html" class="settings-primary-link">
+                        Open Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECURITY -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Security
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-security-note">
+
+                    <strong>
+                        Password Management
+                    </strong>
+
+                    <p>
+                        Password change is not available on this page yet.
+                        A dedicated secure backend password-change endpoint
+                        should be added before enabling that feature.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SESSION ACTIONS -->
+
+            <div class="section-card danger-settings-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Session Actions
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-action-row">
+
+                    <div>
+
+                        <h3>
+                            Sign Out
+                        </h3>
+
+                        <p>
+                            Remove the current login information
+                            from this browser and return to login.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" id="settings-logout-btn" class="settings-danger-btn">
+                        🚪 Sign Out
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa Bank - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="panel" id="login-section">
+        <div class="login-outer">
+            <div class="login-card">
+                <div class="logo">🏛 NEXA BANK</div>
+                <div class="login-icon" id="loginIcon">👤</div>
+                <h2>Welcome Back</h2>
+                <p class="sub">Please select your role and login to continue.</p>
+                <div class="field">
+                    <label>Login As</label>
+                    <select id="userType" onchange="updateRole()">
+                        <option data-color1="#1857FC" data-color2="#4C82FF" data-icon="👤"
+                            data-target="customer-dashboard" value="customer">Customer</option>
+                        <option data-color1="#017743" data-color2="#3CAE78" data-icon="💼"
+                            data-target="officer-dashboard" value="officer">Account Officer</option>
+                        <option data-color1="#0D6EFD" data-color2="#5FA0FF" data-icon="🏠" data-target="loan-dashboard"
+                            value="loan">Loan Officer</option>
+                        <option data-color1="#7747DB" data-color2="#A87CF0" data-icon="🏛"
+                            data-target="branch-dashboard" value="branch">Branch Manager</option>
+                        <option data-color1="#DE1920" data-color2="#F26A65" data-icon="👑" data-target="admin-dashboard"
+                            value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Username or Email</label>
+                    <input id="loginUser" placeholder="Enter your username or email" />
+                </div>
+                <div class="field" style="margin-bottom:0;">
+                    <label>Password</label>
+                    <input id="loginPass" placeholder="Enter your password" type="password" />
+                </div>
+                <div class="row-between"><a href="#">Forgot Password?</a></div>
+                <button class="login-btn" id="loginBtn" onclick="doLogin()">Login</button>
+                <div class="create-link">Don't have an account? <a href="create-account.html">Create Account</a></div>
+                <div class="home-container"><a href="index.html" class="home-button">Home</a></div>
+                <div id="loginMsg"
+                    style="display:none; margin-top:14px; font-size:12px; text-align:center; color:#0F9D58; font-weight:700;">
+                    ✔ Login successful. Opening your dashboard…</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,713 @@
+/* =========================================================
+   NEXA BANK - LANDING PAGE
+   Modern / Premium Banking UI
+   ========================================================= */
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f8f7;
+    color: #102a43;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   MAIN PANEL
+========================= */
+
+.panel {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(8, 127, 91, 0.08), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(37, 99, 235, 0.05), transparent 25%),
+        #f7faf9;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    height: 82px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(16, 42, 67, 0.07);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    color: #0b1f33;
+
+    white-space: nowrap;
+}
+
+.logo .mark {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0b1f33;
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    box-shadow: 0 6px 15px rgba(11, 31, 51, 0.16);
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navlinks a {
+    position: relative;
+
+    text-decoration: none;
+    color: #526b82;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navlinks a:hover {
+    color: #087f5b;
+    transform: translateY(-1px);
+}
+
+
+/* Animated underline */
+
+.navlinks a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #087f5b;
+    border-radius: 5px;
+
+    transition: width 0.25s ease;
+}
+
+.navlinks a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   NAV ACTION
+========================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   GENERAL SOLID BUTTON
+========================= */
+
+.btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    background: #087f5b;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border: 1px solid #087f5b;
+
+    box-shadow: 0 7px 18px rgba(8, 127, 91, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-solid:hover {
+    background: #066c4e;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 23px rgba(8, 127, 91, 0.25);
+}
+
+.btn-solid:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 500px;
+
+    margin: 0 auto;
+
+    padding: 80px 50px 65px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero>div:first-child {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    color: #0b1f33;
+
+    font-weight: 800;
+
+    margin-bottom: 24px;
+}
+
+
+/* Highlight */
+
+.hero h1 span {
+    color: #087f5b;
+
+    display: inline-block;
+}
+
+
+/* Description */
+
+.hero p {
+    max-width: 610px;
+
+    color: #60758a;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Outline button */
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid #b9c8d4;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #243b53;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: white;
+
+    border-color: #087f5b;
+
+    color: #087f5b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(16, 42, 67, 0.08);
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 105px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(11, 31, 51, 0.98),
+            rgba(18, 59, 93, 0.95),
+            rgba(8, 127, 91, 0.92));
+
+    box-shadow:
+        0 25px 55px rgba(11, 31, 51, 0.18);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    top: -70px;
+    right: -50px;
+}
+
+.hero-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    bottom: -70px;
+    left: -50px;
+}
+
+
+/* Keep emoji above decorations */
+
+.hero-visual {
+    isolation: isolate;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+    z-index: -1;
+}
+
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 20px 50px 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================
+   FEATURE CARD
+========================= */
+
+.feature {
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #e3e9ee;
+
+    border-radius: 15px;
+
+    padding: 25px 22px;
+
+    min-height: 190px;
+
+    box-shadow:
+        0 5px 18px rgba(16, 42, 67, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+
+    border-color: #c9ded7;
+
+    box-shadow:
+        0 15px 30px rgba(16, 42, 67, 0.10);
+}
+
+
+/* =========================
+   FEATURE ICON
+========================= */
+
+.fi {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   FEATURE TITLE
+========================= */
+
+.feature h4 {
+    color: #102a43;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================
+   FEATURE DESCRIPTION
+========================= */
+
+.feature p {
+    color: #71869a;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 22px;
+    }
+
+    .navlinks {
+        gap: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 65px 35px 45px;
+
+        text-align: center;
+    }
+
+    .hero>div:first-child {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+        font-size: 85px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 20px 35px 55px;
+    }
+}
+
+
+/* =========================
+   TABLET / SMALL SCREEN
+========================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo .mark {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+    }
+
+    .navlinks {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 25px;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    .hero {
+        padding: 55px 20px 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        min-height: 240px;
+
+        border-radius: 22px;
+
+        font-size: 70px;
+    }
+
+    .features {
+        padding: 20px 20px 45px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        min-height: auto;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .navbar {
+        padding: 16px 14px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-actions .btn-solid {
+        min-width: 85px;
+        padding: 9px 15px;
+        font-size: 13px;
+    }
+
+    .navlinks {
+        gap: 16px;
+    }
+
+    .navlinks a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 45px 15px 35px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 200px;
+
+        font-size: 58px;
+    }
+
+    .features {
+        padding: 15px 15px 35px;
+    }
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid rgba(8, 127, 91, 0.35);
+
+    outline-offset: 3px;
+}

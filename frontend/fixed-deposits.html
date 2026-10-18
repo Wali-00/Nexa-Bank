@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Fixed Deposits</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html" class="active">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN
+        =========================================== -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    Fixed Deposits
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-card">
+
+                <h2>
+                    Grow Your Savings
+                </h2>
+
+                <p>
+                    Create and manage fixed deposits
+                    linked to your Nexa Bank account.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Deposits
+                    </h3>
+
+                    <div class="value" id="total-fixed-deposits">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Active Deposits
+                    </h3>
+
+                    <div class="value" id="active-fixed-deposits">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Principal
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="total-fd-principal">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 CREATE FIXED DEPOSIT
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Create Fixed Deposit
+                    </h2>
+
+                </div>
+
+
+                <form id="fixed-deposit-form">
+
+                    <div class="customer-grid">
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="fd-account">
+                                Source Account
+                            </label>
+
+                            <select id="fd-account" required>
+
+                                <option value="">
+                                    Select account
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Available Balance
+                            </span>
+
+                            <span class="info-value" id="fd-account-balance">
+                                ৳0.00
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="fd-principal">
+                                Principal Amount
+                            </label>
+
+                            <input type="number" id="fd-principal" min="0.01" step="0.01" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="fd-interest-rate">
+                                Interest Rate (%)
+                            </label>
+
+                            <input type="number" id="fd-interest-rate" min="0" step="0.01" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="fd-start-date">
+                                Start Date
+                            </label>
+
+                            <input type="date" id="fd-start-date" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="fd-maturity-date">
+                                Maturity Date
+                            </label>
+
+                            <input type="date" id="fd-maturity-date" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="fd-preview" class="fd-preview" style="display: none;">
+
+                        <h3>
+                            Deposit Preview
+                        </h3>
+
+                        <div class="fd-preview-grid">
+
+                            <div>
+                                <span>
+                                    Principal
+                                </span>
+
+                                <strong id="preview-principal">
+                                    ৳0.00
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    Interest Rate
+                                </span>
+
+                                <strong id="preview-rate">
+                                    0%
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    Term
+                                </span>
+
+                                <strong id="preview-term">
+                                    -
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    Estimated Maturity
+                                </span>
+
+                                <strong id="preview-maturity">
+                                    ৳0.00
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="create-fd-btn" class="update-btn">
+                            📈 Create Fixed Deposit
+                        </button>
+
+
+                        <button type="reset" id="clear-fd-btn" class="cancel-btn">
+                            ↺ Clear
+                        </button>
+
+                    </div>
+
+
+                    <p id="fd-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- ==========================================
+                 RECEIPT
+            =========================================== -->
+
+            <div class="section-card" id="fd-receipt-card" style="display: none;">
+
+                <div class="section-header">
+
+                    <h2>
+                        Fixed Deposit Receipt
+                    </h2>
+
+                </div>
+
+
+                <div class="customer-grid">
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Fixed Deposit ID
+                        </span>
+
+                        <span class="info-value" id="receipt-fd-id">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Principal
+                        </span>
+
+                        <span class="info-value" id="receipt-fd-principal">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Maturity Amount
+                        </span>
+
+                        <span class="info-value" id="receipt-fd-maturity">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <span class="info-value" id="receipt-fd-status">
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 FIXED DEPOSIT LIST
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        My Fixed Deposits
+                    </h2>
+
+                </div>
+
+
+                <div id="fixed-deposit-list" class="fd-list">
+
+                    <p>
+                        Loading fixed deposits...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/fixed-deposits.js"></script>
+
+</body>
+
+</html>

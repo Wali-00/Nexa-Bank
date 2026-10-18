@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Transfer Money</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html" class="active">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+
+        <main class="main-content">
+
+            <!-- ==========================================
+                 TOP BAR
+            =========================================== -->
+
+            <div class="topbar">
+
+                <h1>
+                    Transfer Money
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 INTRO
+            =========================================== -->
+
+            <div class="welcome-card">
+
+                <h2>
+                    Send Money
+                </h2>
+
+                <p>
+                    Transfer money securely between
+                    Nexa Bank accounts.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 TRANSFER FORM
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        New Transfer
+                    </h2>
+
+                </div>
+
+
+                <form id="transfer-form">
+
+                    <div class="customer-grid">
+
+
+                        <!-- SENDER ACCOUNT -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="sender-account">
+                                From Account
+                            </label>
+
+                            <select id="sender-account" required>
+
+                                <option value="">
+                                    Select account
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AVAILABLE BALANCE -->
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Available Balance
+                            </span>
+
+                            <span class="info-value" id="sender-balance">
+                                ৳0.00
+                            </span>
+
+                        </div>
+
+
+                        <!-- RECEIVER ACCOUNT -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="receiver-account">
+                                Receiver Account ID
+                            </label>
+
+                            <input type="number" id="receiver-account" min="1" placeholder="Enter receiver account ID"
+                                required>
+
+                        </div>
+
+
+                        <!-- AMOUNT -->
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="transfer-amount">
+                                Amount
+                            </label>
+
+                            <input type="number" id="transfer-amount" min="0.01" step="0.01" placeholder="Enter amount"
+                                required>
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="info-item" style="grid-column: 1 / -1;">
+
+                            <label class="info-label" for="transfer-description">
+                                Description
+                            </label>
+
+                            <textarea id="transfer-description" rows="3"
+                                placeholder="Optional transfer description"></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         ACTIONS
+                    =========================================== -->
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="transfer-btn" class="update-btn">
+                            💸 Transfer Money
+                        </button>
+
+
+                        <button type="reset" id="clear-transfer-btn" class="cancel-btn">
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <p id="transfer-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- ==========================================
+                 TRANSFER RESULT
+            =========================================== -->
+
+            <div class="section-card" id="transfer-result-card" style="display: none;">
+
+                <div class="section-header">
+
+                    <h2>
+                        Transfer Receipt
+                    </h2>
+
+                </div>
+
+
+                <div class="customer-grid">
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Transaction ID
+                        </span>
+
+                        <span class="info-value" id="result-transaction-id">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Reference Number
+                        </span>
+
+                        <span class="info-value" id="result-reference-no">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Sender Account
+                        </span>
+
+                        <span class="info-value" id="result-sender-account">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Receiver Account
+                        </span>
+
+                        <span class="info-value" id="result-receiver-account">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Amount
+                        </span>
+
+                        <span class="info-value" id="result-amount">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <span class="info-value" id="result-status">
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/transfer.js"></script>
+
+</body>
+
+</html>

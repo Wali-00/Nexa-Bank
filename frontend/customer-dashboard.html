@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Customer Dashboard</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html" class="active">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p class="dashboard-subtitle">
+                        Your Nexa Bank account overview
+                    </p>
+
+                </div>
+
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 WELCOME
+            =========================================== -->
+
+            <div class="dashboard-welcome">
+
+                <div>
+
+                    <span class="welcome-small">
+                        Welcome back
+                    </span>
+
+                    <h2>
+                        <span id="welcome-name">
+                            Customer
+                        </span> 👋
+                    </h2>
+
+                    <p>
+                        Here's a quick overview of your
+                        Nexa Bank account.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-account">
+
+                    <span>
+                        Account Number
+                    </span>
+
+                    <strong id="welcome-account-number">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 MAIN STATS
+            =========================================== -->
+
+            <div class="dashboard-overview-grid">
+
+
+                <!-- TOTAL BALANCE -->
+
+                <div class="overview-card balance-overview-card">
+
+                    <div class="overview-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <span class="overview-label">
+                            Available Balance
+                        </span>
+
+                        <h2>
+                            ৳<span id="total-balance">
+                                0.00
+                            </span>
+                        </h2>
+
+                        <small>
+                            Across your Nexa Bank accounts
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT NUMBER -->
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        💳
+                    </div>
+
+                    <div>
+
+                        <span class="overview-label">
+                            Primary Account
+                        </span>
+
+                        <h3 id="account-number">
+                            Loading...
+                        </h3>
+
+                        <small>
+                            Nexa Bank account
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUSTOMER ID -->
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <span class="overview-label">
+                            Customer ID
+                        </span>
+
+                        <h3 id="customer-id">
+                            -
+                        </h3>
+
+                        <small>
+                            Your unique customer ID
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span class="overview-label">
+                            Profile Status
+                        </span>
+
+                        <h3>
+                            <span id="customer-status" class="dashboard-status">
+                                Loading...
+                            </span>
+                        </h3>
+
+                        <small>
+                            Current customer status
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 QUICK ACTIONS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p class="section-description">
+                            Access your most frequently used
+                            banking services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-action-grid">
+
+
+                    <a href="transfer.html" class="quick-action-card">
+
+                        <div class="quick-action-icon transfer-action">
+                            💸
+                        </div>
+
+                        <div>
+                            <strong>
+                                Transfer Money
+                            </strong>
+
+                            <span>
+                                Send money to another account
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="bills.html" class="quick-action-card">
+
+                        <div class="quick-action-icon bills-action">
+                            🧾
+                        </div>
+
+                        <div>
+                            <strong>
+                                Pay Bills
+                            </strong>
+
+                            <span>
+                                Pay supported billers
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="transactions.html" class="quick-action-card">
+
+                        <div class="quick-action-icon transaction-action">
+                            📊
+                        </div>
+
+                        <div>
+                            <strong>
+                                Transactions
+                            </strong>
+
+                            <span>
+                                View complete transaction history
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="accounts.html" class="quick-action-card">
+
+                        <div class="quick-action-icon account-action">
+                            💳
+                        </div>
+
+                        <div>
+                            <strong>
+                                My Accounts
+                            </strong>
+
+                            <span>
+                                View balances and account details
+                            </span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 ACCOUNT OVERVIEW
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Account Overview
+                        </h2>
+
+                        <p class="section-description">
+                            Summary of your primary banking account.
+                        </p>
+
+                    </div>
+
+
+                    <a href="accounts.html" class="dashboard-view-link">
+                        View Accounts →
+                    </a>
+
+                </div>
+
+
+                <div class="account-overview-details">
+
+
+                    <div>
+
+                        <span>
+                            Account Number
+                        </span>
+
+                        <strong id="overview-account-number">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong id="overview-account-type">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Balance
+                        </span>
+
+                        <strong id="overview-balance">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Available Balance
+                        </span>
+
+                        <strong id="overview-available-balance">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Account Status
+                        </span>
+
+                        <strong id="overview-account-status">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Opened Date
+                        </span>
+
+                        <strong id="overview-opened-date">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 RECENT TRANSACTIONS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Transactions
+                        </h2>
+
+                        <p class="section-description">
+                            Your latest account activity.
+                        </p>
+
+                    </div>
+
+
+                    <a href="transactions.html" class="dashboard-view-link">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="dashboard-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Reference</th>
+                                <th>Type</th>
+                                <th>Entry</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="recent-transactions-body">
+
+                            <tr>
+
+                                <td colspan="6">
+                                    Loading recent transactions...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 BANKING SERVICES
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Banking Services
+                        </h2>
+
+                        <p class="section-description">
+                            Explore more Nexa Bank services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-service-grid">
+
+
+                    <a href="beneficiaries.html">
+
+                        <span>
+                            👥
+                        </span>
+
+                        <strong>
+                            Nominees
+                        </strong>
+
+                    </a>
+
+
+                    <a href="loans.html">
+
+                        <span>
+                            🏦
+                        </span>
+
+                        <strong>
+                            Loans
+                        </strong>
+
+                    </a>
+
+
+                    <a href="cards.html">
+
+                        <span>
+                            💳
+                        </span>
+
+                        <strong>
+                            Cards
+                        </strong>
+
+                    </a>
+
+
+                    <a href="fixed-deposits.html">
+
+                        <span>
+                            📈
+                        </span>
+
+                        <strong>
+                            Fixed Deposits
+                        </strong>
+
+                    </a>
+
+
+                    <a href="profile.html">
+
+                        <span>
+                            👤
+                        </span>
+
+                        <strong>
+                            My Profile
+                        </strong>
+
+                    </a>
+
+
+                    <a href="settings.html">
+
+                        <span>
+                            ⚙️
+                        </span>
+
+                        <strong>
+                            Settings
+                        </strong>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- GLOBAL CUSTOMER THEME -->
+
+    <script src="js/customer-theme.js"></script>
+
+
+    <!-- DASHBOARD -->
+
+    <script src="js/customer-dashboard.js"></script>
+
+</body>
+
+</html>

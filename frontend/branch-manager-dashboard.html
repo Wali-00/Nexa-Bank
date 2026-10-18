@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Nexa Bank - Branch Manager Dashboard
+    </title>
+
+    <link rel="stylesheet" href="css/branchManager.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+
+            <div class="user-role">
+                BRANCH MANAGER PORTAL
+            </div>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="#" class="manager-nav-link active" data-section="manager-dashboard-section">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-overview-section">
+                        🏢 Branch Overview
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-customers-section">
+                        👥 Customers
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-accounts-section">
+                        💳 Accounts
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-transactions-section">
+                        💸 Transactions
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-loans-section">
+                        🏦 Loans
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="branch-reports-section">
+                        📈 Reports
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="manager-nav-link" data-section="manager-profile-section">
+                        👤 Profile
+                    </a>
+                </li>
+
+
+                <li class="logout">
+
+                    <a href="login.html" id="branch-manager-logout-btn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+                        Branch Manager Dashboard
+                    </h1>
+
+                    <p id="manager-topbar-branch">
+                        Loading branch...
+                    </p>
+
+                </div>
+
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="manager-topbar-name">
+                        Branch Manager
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+            <section id="manager-dashboard-section" class="manager-section active-section">
+
+                <div class="welcome-card">
+
+                    <h2 id="manager-welcome-name">
+                        Welcome, Branch Manager
+                    </h2>
+
+                    <p>
+                        Monitor customers, accounts, transactions,
+                        loans and overall branch performance.
+                    </p>
+
+                </div>
+
+
+                <!-- MAIN STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            👥
+                        </span>
+
+                        <h3>
+                            Branch Customers
+                        </h3>
+
+                        <strong class="stat-value" id="manager-total-customers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            💳
+                        </span>
+
+                        <h3>
+                            Active Accounts
+                        </h3>
+
+                        <strong class="stat-value" id="manager-active-accounts">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            🏦
+                        </span>
+
+                        <h3>
+                            Active Loans
+                        </h3>
+
+                        <strong class="stat-value" id="manager-active-loans">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-icon">
+                            💰
+                        </span>
+
+                        <h3>
+                            Total Account Balance
+                        </h3>
+
+                        <strong class="stat-value" id="manager-total-balance">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Accounts
+                        </h3>
+
+                        <strong class="stat-value" id="manager-total-accounts">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Loans
+                        </h3>
+
+                        <strong class="stat-value" id="manager-total-loans">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Loan Outstanding
+                        </h3>
+
+                        <strong class="stat-value" id="manager-loan-outstanding">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Employees
+                        </h3>
+
+                        <strong class="stat-value" id="manager-employee-count">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Access
+                            </h2>
+
+                            <p>
+                                Open branch monitoring sections.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-action-grid">
+
+                        <button type="button" class="quick-action" data-open-section="branch-customers-section">
+                            👥
+
+                            <strong>
+                                Customers
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="quick-action" data-open-section="branch-accounts-section">
+                            💳
+
+                            <strong>
+                                Accounts
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="quick-action" data-open-section="branch-transactions-section">
+                            💸
+
+                            <strong>
+                                Transactions
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="quick-action" data-open-section="branch-loans-section">
+                            🏦
+
+                            <strong>
+                                Loans
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="quick-action" data-open-section="branch-reports-section">
+                            📈
+
+                            <strong>
+                                Reports
+                            </strong>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             BRANCH OVERVIEW
+        ================================================== -->
+
+            <section id="branch-overview-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Overview
+                        </h2>
+
+                        <p>
+                            General information and statistics for
+                            your assigned branch.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-overview-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <div class="overview-item">
+
+                        <span>
+                            Branch ID
+                        </span>
+
+                        <strong id="overview-branch-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Branch Name
+                        </span>
+
+                        <strong id="overview-branch-name">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Branch Code
+                        </span>
+
+                        <strong id="overview-branch-code">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong id="overview-branch-phone">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="overview-branch-email">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="overview-branch-status">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item full-width">
+
+                        <span>
+                            Address
+                        </span>
+
+                        <strong id="overview-branch-address">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-grid">
+
+                    <div class="report-card">
+                        <span>Customers</span>
+                        <strong id="overview-customer-count">0</strong>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Accounts</span>
+                        <strong id="overview-account-count">0</strong>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Employees</span>
+                        <strong id="overview-employee-count">0</strong>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Loans</span>
+                        <strong id="overview-loan-count">0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             CUSTOMERS
+        ================================================== -->
+
+            <section id="branch-customers-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Customers
+                        </h2>
+
+                        <p>
+                            Customers registered under this branch.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-customers-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="filter-row">
+
+                    <input type="text" id="branch-customer-search"
+                        placeholder="Search customer ID, name, email, phone or NID" autocomplete="off">
+
+
+                    <select id="branch-customer-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="INACTIVE">
+                            Inactive
+                        </option>
+
+                        <option value="BLOCKED">
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="manager-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>NID</th>
+                                <th>Occupation</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="branch-customers-body">
+
+                            <tr>
+                                <td colspan="7" class="message-row">
+                                    Loading customers...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             ACCOUNTS
+        ================================================== -->
+
+            <section id="branch-accounts-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Accounts
+                        </h2>
+
+                        <p>
+                            Monitor customer accounts belonging to
+                            this branch.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-accounts-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="filter-row">
+
+                    <input type="text" id="branch-account-search"
+                        placeholder="Search account number, customer ID or account ID" autocomplete="off">
+
+
+                    <select id="branch-account-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="INACTIVE">
+                            Inactive
+                        </option>
+
+                        <option value="BLOCKED">
+                            Blocked
+                        </option>
+
+                        <option value="CLOSED">
+                            Closed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="manager-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Account ID</th>
+                                <th>Account Number</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Balance</th>
+                                <th>Available</th>
+                                <th>Opened</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="branch-accounts-body">
+
+                            <tr>
+                                <td colspan="8" class="message-row">
+                                    Loading accounts...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             TRANSACTIONS
+        ================================================== -->
+
+            <section id="branch-transactions-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Transactions
+                        </h2>
+
+                        <p>
+                            Monitor transactions related to branch
+                            customer accounts.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-transactions-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="filter-row">
+
+                    <input type="text" id="branch-transaction-search"
+                        placeholder="Search reference, transaction ID or account" autocomplete="off">
+
+
+                    <select id="branch-transaction-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="SUCCESS">
+                            Success
+                        </option>
+
+                        <option value="FAILED">
+                            Failed
+                        </option>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="manager-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Reference</th>
+                                <th>Type</th>
+                                <th>Account</th>
+                                <th>Amount</th>
+                                <th>Fee</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="branch-transactions-body">
+
+                            <tr>
+                                <td colspan="8" class="message-row">
+                                    Loading transactions...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             LOANS
+        ================================================== -->
+
+            <section id="branch-loans-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Loans
+                        </h2>
+
+                        <p>
+                            Monitor loans belonging to branch customers.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-loans-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="filter-row">
+
+                    <input type="text" id="branch-loan-search" placeholder="Search loan ID, customer or account"
+                        autocomplete="off">
+
+
+                    <select id="branch-loan-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="APPROVED">
+                            Approved
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="COMPLETED">
+                            Completed
+                        </option>
+
+                        <option value="DEFAULTED">
+                            Defaulted
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="manager-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Loan ID</th>
+                                <th>Customer</th>
+                                <th>Loan Type</th>
+                                <th>Principal</th>
+                                <th>Outstanding</th>
+                                <th>Interest</th>
+                                <th>EMI</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="branch-loans-body">
+
+                            <tr>
+                                <td colspan="8" class="message-row">
+                                    Loading loans...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             REPORTS
+        ================================================== -->
+
+            <section id="branch-reports-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Branch Reports
+                        </h2>
+
+                        <p>
+                            Summary of branch financial and
+                            operational activity.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="refresh-branch-reports-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="report-grid">
+
+                    <div class="report-card">
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="report-total-customers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Active Customers
+                        </span>
+
+                        <strong id="report-active-customers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Total Accounts
+                        </span>
+
+                        <strong id="report-total-accounts">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Total Deposits
+                        </span>
+
+                        <strong id="report-total-deposits">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Total Loans
+                        </span>
+
+                        <strong id="report-total-loans">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Active Loans
+                        </span>
+
+                        <strong id="report-active-loans">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Loan Principal
+                        </span>
+
+                        <strong id="report-loan-principal">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>
+                            Loan Outstanding
+                        </span>
+
+                        <strong id="report-loan-outstanding">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+            <section id="manager-profile-section" class="manager-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Manager Profile
+                        </h2>
+
+                        <p>
+                            Your employee and branch information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        👤
+                    </div>
+
+
+                    <div>
+
+                        <h2 id="profile-manager-name">
+                            Branch Manager
+                        </h2>
+
+                        <p id="profile-manager-position">
+                            Branch Manager
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <div class="overview-item">
+
+                        <span>
+                            Employee ID
+                        </span>
+
+                        <strong id="profile-employee-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            User ID
+                        </span>
+
+                        <strong id="profile-user-id">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Department
+                        </span>
+
+                        <strong id="profile-department">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Position
+                        </span>
+
+                        <strong id="profile-position">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Branch
+                        </span>
+
+                        <strong id="profile-branch">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="profile-status">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="js/branch-manager-dashboard.js"></script>
+
+</body>
+
+</html>

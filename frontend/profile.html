@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Profile</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html" class="active">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    My Profile
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE HERO -->
+
+            <div class="profile-hero">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <h2 id="profile-full-name">
+                        Loading...
+                    </h2>
+
+                    <p id="profile-email">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <div class="profile-status-wrap">
+
+                    <span id="profile-status" class="profile-status-badge">
+                        Loading...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Customer ID
+                    </h3>
+
+                    <div class="value" id="profile-customer-id">
+                        -
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Account Number
+                    </h3>
+
+                    <div class="value" id="profile-account-number">
+                        Loading...
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Branch ID
+                    </h3>
+
+                    <div class="value" id="profile-branch-id">
+                        -
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Personal Information
+                    </h2>
+
+                    <button type="button" id="open-profile-edit" class="edit-btn">
+                        ✏️ Edit Profile
+                    </button>
+
+                </div>
+
+
+                <div class="profile-info-grid">
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            First Name
+                        </span>
+
+                        <strong id="profile-first-name">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            Last Name
+                        </span>
+
+                        <strong id="profile-last-name">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <strong id="profile-dob">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            NID
+                        </span>
+
+                        <strong id="profile-nid">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong id="profile-phone">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="profile-email-detail">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box">
+
+                        <span>
+                            Occupation
+                        </span>
+
+                        <strong id="profile-occupation">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-info-box profile-address-box">
+
+                        <span>
+                            Address
+                        </span>
+
+                        <strong id="profile-address">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDIT PROFILE -->
+
+            <div class="section-card" id="profile-edit-card" style="display: none;">
+
+                <div class="section-header">
+
+                    <h2>
+                        Edit Profile
+                    </h2>
+
+                </div>
+
+
+                <form id="profile-edit-form">
+
+                    <div class="customer-grid">
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-first-name">
+                                First Name
+                            </label>
+
+                            <input type="text" id="edit-profile-first-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-last-name">
+                                Last Name
+                            </label>
+
+                            <input type="text" id="edit-profile-last-name" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-dob">
+                                Date of Birth
+                            </label>
+
+                            <input type="date" id="edit-profile-dob" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-phone">
+                                Phone
+                            </label>
+
+                            <input type="text" id="edit-profile-phone" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-email">
+                                Email
+                            </label>
+
+                            <input type="email" id="edit-profile-email" required>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <label class="info-label" for="edit-profile-occupation">
+                                Occupation
+                            </label>
+
+                            <input type="text" id="edit-profile-occupation">
+
+                        </div>
+
+
+                        <div class="info-item" style="grid-column: 1 / -1;">
+
+                            <label class="info-label" for="edit-profile-address">
+                                Address
+                            </label>
+
+                            <textarea id="edit-profile-address" rows="3" required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="edit-actions">
+
+                        <button type="submit" id="save-profile-btn" class="update-btn">
+                            ✓ Save Changes
+                        </button>
+
+
+                        <button type="button" id="cancel-profile-edit" class="cancel-btn">
+                            ✕ Cancel
+                        </button>
+
+                    </div>
+
+
+                    <p id="profile-update-message" class="update-message"></p>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

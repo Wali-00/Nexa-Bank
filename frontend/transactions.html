@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Transactions</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html" class="active">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+
+        <main class="main-content">
+
+            <!-- ==========================================
+                 TOP BAR
+            =========================================== -->
+
+            <div class="topbar">
+
+                <h1>
+                    Transactions
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 INTRO
+            =========================================== -->
+
+            <div class="welcome-card">
+
+                <h2>
+                    Transaction History
+                </h2>
+
+                <p>
+                    View your debit, credit, transfer,
+                    bill payment, loan and card transactions.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 SUMMARY
+            =========================================== -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Transactions
+                    </h3>
+
+                    <div class="value" id="total-transactions">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Credit
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="total-credit">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Debit
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="total-debit">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 FILTERS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Filters
+                    </h2>
+
+                </div>
+
+
+                <div class="transaction-filters">
+
+                    <div class="filter-group">
+
+                        <label for="search-reference">
+                            Search Reference
+                        </label>
+
+                        <input type="text" id="search-reference" placeholder="e.g. TRF-, BIL-, LPM-...">
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="entry-filter">
+                            Entry Type
+                        </label>
+
+                        <select id="entry-filter">
+
+                            <option value="ALL">
+                                All Entries
+                            </option>
+
+                            <option value="DEBIT">
+                                Debit
+                            </option>
+
+                            <option value="CREDIT">
+                                Credit
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="type-filter">
+                            Transaction Type
+                        </label>
+
+                        <select id="type-filter">
+
+                            <option value="ALL">
+                                All Types
+                            </option>
+
+                            <option value="1">
+                                Deposit
+                            </option>
+
+                            <option value="2">
+                                Withdrawal
+                            </option>
+
+                            <option value="3">
+                                Transfer
+                            </option>
+
+                            <option value="4">
+                                Bill Payment
+                            </option>
+
+                            <option value="5">
+                                Loan Disbursement
+                            </option>
+
+                            <option value="6">
+                                Loan Payment
+                            </option>
+
+                            <option value="7">
+                                Card Payment
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="status-filter">
+                            Status
+                        </label>
+
+                        <select id="status-filter">
+
+                            <option value="ALL">
+                                All Statuses
+                            </option>
+
+                            <option value="PENDING">
+                                Pending
+                            </option>
+
+                            <option value="SUCCESS">
+                                Success
+                            </option>
+
+                            <option value="FAILED">
+                                Failed
+                            </option>
+
+                            <option value="REVERSED">
+                                Reversed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 TRANSACTION TABLE
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        All Transactions
+                    </h2>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table class="dashboard-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Reference</th>
+                                <th>Account</th>
+                                <th>Type</th>
+                                <th>Entry</th>
+                                <th>Amount</th>
+                                <th>Fee</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="transactions-body">
+
+                            <tr>
+
+                                <td colspan="9">
+                                    Loading transactions...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/transactions.js"></script>
+
+</body>
+
+</html>

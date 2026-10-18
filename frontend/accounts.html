@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nexa Bank - My Accounts</title>
+
+    <link
+        rel="stylesheet"
+        href="css/customerCss.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- ==========================================
+             SIDEBAR
+        =========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="accounts.html"
+                        class="active"
+                    >
+                        💳 My Accounts
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="notifications.html">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+
+                <li class="logout">
+
+                    <a
+                        href="login.html"
+                        id="logoutBtn"
+                    >
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ==========================================
+             MAIN CONTENT
+        =========================================== -->
+
+        <main class="main-content">
+
+
+            <!-- ==========================================
+                 TOP BAR
+            =========================================== -->
+
+            <div class="topbar">
+
+                <h1>
+                    My Accounts
+                </h1>
+
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 INTRO
+            =========================================== -->
+
+            <div class="welcome-card">
+
+                <h2>
+                    Your Nexa Bank Accounts
+                </h2>
+
+                <p>
+                    View your account balances,
+                    available funds and account status.
+                </p>
+
+            </div>
+
+
+            <!-- ==========================================
+                 ACCOUNT SUMMARY
+            =========================================== -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Accounts
+                    </h3>
+
+                    <div
+                        class="value"
+                        id="total-accounts"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Balance
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="accounts-total-balance">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Available Balance
+                    </h3>
+
+                    <div class="value">
+
+                        ৳
+
+                        <span id="accounts-available-balance">
+                            0.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 ACCOUNTS
+            =========================================== -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Account Details
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="accounts-container"
+                    class="accounts-container"
+                >
+
+                    <p>
+                        Loading your accounts...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/accounts.js"></script>
+
+</body>
+
+</html>

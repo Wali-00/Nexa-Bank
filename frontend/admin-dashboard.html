@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/AdminDash.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+
+        <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-brand">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="admin-role">
+                SYSTEM ADMINISTRATION
+            </div>
+
+
+            <ul class="admin-menu">
+
+                <li>
+                    <a href="#" class="admin-nav-link active" data-section="admin-dashboard-section">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-users-section">
+                        👤 User Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-employees-section">
+                        💼 Employee Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-customers-section">
+                        👥 Customer Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-branches-section">
+                        🏢 Branch Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-accounts-section">
+                        💳 Account Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-transactions-section">
+                        💸 Transaction Monitoring
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-loans-section">
+                        🏦 Loan Management
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-reports-section">
+                        📈 System Reports
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-audit-section">
+                        📜 Audit Logs
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-notifications-section">
+                        🔔 System Events
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="admin-nav-link" data-section="admin-profile-section">
+                        👤 Profile
+                    </a>
+                </li>
+
+
+                <li class="admin-logout">
+
+                    <a href="login.html" id="admin-logout-btn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+            <div class="admin-topbar">
+
+                <div>
+
+                    <h1>
+                        Nexa Bank Administration
+                    </h1>
+
+                    <p>
+                        Bank-wide administration and monitoring
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile-box">
+
+                    🛡️
+
+                    <span id="admin-topbar-name">
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+            <section id="admin-dashboard-section" class="admin-section active-section">
+
+                <div class="admin-welcome">
+
+                    <div>
+
+                        <span class="admin-welcome-small">
+                            System Administration
+                        </span>
+
+                        <h2>
+
+                            Welcome,
+
+                            <span id="admin-welcome-name">
+                                Administrator
+                            </span>
+
+                        </h2>
+
+                        <p>
+                            Monitor and administer the entire Nexa Bank
+                            database system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-stats-grid">
+
+                    <div class="admin-stat-card">
+
+                        <span>👥</span>
+
+                        <p>
+                            Customers
+                        </p>
+
+                        <strong id="admin-total-customers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>💼</span>
+
+                        <p>
+                            Employees
+                        </p>
+
+                        <strong id="admin-total-employees">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>🏢</span>
+
+                        <p>
+                            Branches
+                        </p>
+
+                        <strong id="admin-total-branches">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>💳</span>
+
+                        <p>
+                            Accounts
+                        </p>
+
+                        <strong id="admin-total-accounts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-stats-grid">
+
+                    <div class="admin-stat-card">
+
+                        <span>💰</span>
+
+                        <p>
+                            Total Deposits
+                        </p>
+
+                        <strong id="admin-total-deposits">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>🏦</span>
+
+                        <p>
+                            Total Loans
+                        </p>
+
+                        <strong id="admin-total-loans">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>📉</span>
+
+                        <p>
+                            Loan Outstanding
+                        </p>
+
+                        <strong id="admin-total-outstanding">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <span>✅</span>
+
+                        <p>
+                            Active Users
+                        </p>
+
+                        <strong id="admin-active-users">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-card">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Administration
+                            </h2>
+
+                            <p>
+                                Jump to a system management module.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-quick-grid">
+
+                        <button type="button" data-open-section="admin-users-section" class="admin-quick-btn">
+                            👤
+                            <strong>Users</strong>
+                        </button>
+
+
+                        <button type="button" data-open-section="admin-employees-section" class="admin-quick-btn">
+                            💼
+                            <strong>Employees</strong>
+                        </button>
+
+
+                        <button type="button" data-open-section="admin-customers-section" class="admin-quick-btn">
+                            👥
+                            <strong>Customers</strong>
+                        </button>
+
+
+                        <button type="button" data-open-section="admin-branches-section" class="admin-quick-btn">
+                            🏢
+                            <strong>Branches</strong>
+                        </button>
+
+
+                        <button type="button" data-open-section="admin-transactions-section" class="admin-quick-btn">
+                            💸
+                            <strong>Transactions</strong>
+                        </button>
+
+
+                        <button type="button" data-open-section="admin-audit-section" class="admin-quick-btn">
+                            📜
+                            <strong>Audit Logs</strong>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             USER MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-users-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            User Management
+                        </h2>
+
+                        <p>
+                            Monitor application users, roles and status.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-users-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-filter-row">
+
+                    <input id="admin-user-search" type="text" placeholder="Search user ID, username, email or role">
+
+
+                    <select id="admin-user-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="INACTIVE">
+                            Inactive
+                        </option>
+
+                        <option value="BLOCKED">
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>User ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-users-body">
+
+                            <tr>
+
+                                <td colspan="5" class="admin-message-row">
+                                    Loading users...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             EMPLOYEE MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-employees-section" class="admin-section">
+
+
+                <!-- =================================================
+                 CREATE EMPLOYEE
+            ================================================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <h2>
+                                Create Employee
+                            </h2>
+
+                            <p>
+                                Create employee login, role and
+                                employment record.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="admin-create-employee-form">
+
+                        <div class="admin-form-grid">
+
+
+                            <!-- USERNAME -->
+
+                            <div>
+
+                                <label>
+                                    Username
+                                </label>
+
+                                <input id="employee-username" type="text" required>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div>
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input id="employee-email" type="email" required>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+
+                            <div>
+
+                                <label>
+                                    Password
+                                </label>
+
+                                <input id="employee-password" type="password" required>
+
+                            </div>
+
+
+                            <!-- ROLE -->
+
+                            <div>
+
+                                <label>
+                                    Role
+                                </label>
+
+                                <select id="employee-role" required>
+
+                                    <option value="">
+                                        Select Role
+                                    </option>
+
+                                    <option value="ADMIN">
+                                        Admin
+                                    </option>
+
+                                    <option value="BRANCH_MANAGER">
+                                        Branch Manager
+                                    </option>
+
+                                    <option value="ACCOUNT_OFFICER">
+                                        Account Officer
+                                    </option>
+
+                                    <option value="LOAN_OFFICER">
+                                        Loan Officer
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- FIRST NAME -->
+
+                            <div>
+
+                                <label>
+                                    First Name
+                                </label>
+
+                                <input id="employee-first-name" type="text" required>
+
+                            </div>
+
+
+                            <!-- LAST NAME -->
+
+                            <div>
+
+                                <label>
+                                    Last Name
+                                </label>
+
+                                <input id="employee-last-name" type="text" required>
+
+                            </div>
+
+
+                            <!-- NID -->
+
+                            <div>
+
+                                <label>
+                                    NID
+                                </label>
+
+                                <input id="employee-nid" type="text" required>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div>
+
+                                <label>
+                                    Phone
+                                </label>
+
+                                <input id="employee-phone" type="text" required>
+
+                            </div>
+
+
+                            <!-- =====================================
+                             BRANCH DROPDOWN
+                        ====================================== -->
+
+                            <div>
+
+                                <label>
+                                    Branch
+                                </label>
+
+                                <select id="employee-branch-id" required>
+
+                                    <option value="">
+                                        Select Branch
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- =====================================
+                             DEPARTMENT DROPDOWN
+                        ====================================== -->
+
+                            <div>
+
+                                <label>
+                                    Department
+                                </label>
+
+                                <select id="employee-department-id" required>
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- =====================================
+                             POSITION DROPDOWN
+                        ====================================== -->
+
+                            <div>
+
+                                <label>
+                                    Position
+                                </label>
+
+                                <select id="employee-position-id" required>
+
+                                    <option value="">
+                                        Select Position
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- JOINING DATE -->
+
+                            <div>
+
+                                <label>
+                                    Joining Date
+                                </label>
+
+                                <input id="employee-joining-date" type="date" required>
+
+                            </div>
+
+
+                            <!-- SALARY -->
+
+                            <div>
+
+                                <label>
+                                    Salary
+                                </label>
+
+                                <input id="employee-salary" type="number" min="0" step="0.01" required>
+
+                            </div>
+
+
+                            <!-- STATUS -->
+
+                            <div>
+
+                                <label>
+                                    Status
+                                </label>
+
+                                <select id="employee-status" required>
+
+                                    <option value="ACTIVE">
+                                        ACTIVE
+                                    </option>
+
+                                    <option value="ON_LEAVE">
+                                        ON_LEAVE
+                                    </option>
+
+                                    <option value="INACTIVE">
+                                        INACTIVE
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-actions">
+
+                            <button class="admin-primary-btn" type="submit" id="admin-create-employee-btn">
+                                + Create Employee
+                            </button>
+
+
+                            <button class="admin-secondary-btn" type="reset">
+                                Clear
+                            </button>
+
+                        </div>
+
+
+                        <p id="admin-employee-message" class="admin-form-message"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- =================================================
+                 EMPLOYEE LIST
+            ================================================== -->
+
+                <div class="admin-card">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <h2>
+                                Employee Management
+                            </h2>
+
+                            <p>
+                                View employees across every branch.
+                            </p>
+
+                        </div>
+
+
+                        <button id="refresh-admin-employees-btn" class="admin-refresh-btn" type="button">
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-filter-row">
+
+                        <input id="admin-employee-search" type="text"
+                            placeholder="Search employee, department, position or branch">
+
+
+                        <select id="admin-employee-status-filter">
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+                            <option value="ACTIVE">
+                                Active
+                            </option>
+
+                            <option value="ON_LEAVE">
+                                On Leave
+                            </option>
+
+                            <option value="INACTIVE">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Position</th>
+                                    <th>Branch</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="admin-employees-body">
+
+                                <tr>
+
+                                    <td colspan="7" class="admin-message-row">
+                                        Loading employees...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             CUSTOMER MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-customers-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Management
+                        </h2>
+
+                        <p>
+                            Bank-wide customer monitoring and status control.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-customers-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-filter-row">
+
+                    <input id="admin-customer-search" type="text"
+                        placeholder="Customer ID, name, email, phone, NID or account">
+
+
+                    <select id="admin-customer-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="INACTIVE">
+                            Inactive
+                        </option>
+
+                        <option value="BLOCKED">
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Customer</th>
+                                <th>Contact</th>
+                                <th>Branch</th>
+                                <th>Account</th>
+                                <th>Balance</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-customers-body">
+
+                            <tr>
+
+                                <td colspan="7" class="admin-message-row">
+                                    Loading customers...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             BRANCH MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-branches-section" class="admin-section">
+
+
+                <!-- ADD / UPDATE BRANCH -->
+
+                <div class="admin-card">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <h2 id="branch-form-title">
+                                Add Branch
+                            </h2>
+
+                            <p>
+                                Create or update Nexa Bank branch information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="admin-branch-form">
+
+                        <input type="hidden" id="branch-edit-id">
+
+
+                        <div class="admin-form-grid">
+
+                            <div>
+
+                                <label>
+                                    Branch Name
+                                </label>
+
+                                <input id="branch-name" type="text" required placeholder="Nexa Bank Banani Branch">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Branch Code
+                                </label>
+
+                                <input id="branch-code" type="text" required placeholder="NXB-BAN-005">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    City
+                                </label>
+
+                                <input id="branch-city" type="text" required placeholder="Dhaka">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Phone
+                                </label>
+
+                                <input id="branch-phone" type="text" placeholder="+8801700000000">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Manager Employee ID
+                                </label>
+
+                                <input id="branch-manager-employee-id" type="number" min="1" placeholder="Optional">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Status
+                                </label>
+
+                                <select id="branch-status" required>
+
+                                    <option value="ACTIVE">
+                                        ACTIVE
+                                    </option>
+
+                                    <option value="INACTIVE">
+                                        INACTIVE
+                                    </option>
+
+                                    <option value="CLOSED">
+                                        CLOSED
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="admin-full-field">
+
+                                <label>
+                                    Address
+                                </label>
+
+                                <textarea id="branch-address" rows="3" required placeholder="Branch address"></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-form-actions">
+
+                            <button type="submit" id="save-branch-btn" class="admin-primary-btn">
+                                + Add Branch
+                            </button>
+
+
+                            <button type="button" id="cancel-branch-edit-btn" class="admin-secondary-btn"
+                                style="display:none;">
+                                Cancel Edit
+                            </button>
+
+
+                            <button type="reset" class="admin-secondary-btn">
+                                Clear
+                            </button>
+
+                        </div>
+
+
+                        <p id="admin-branch-message" class="admin-form-message"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- BRANCH LIST -->
+
+                <div class="admin-card">
+
+                    <div class="admin-section-header">
+
+                        <div>
+
+                            <h2>
+                                Branch Management
+                            </h2>
+
+                            <p>
+                                Manage all Nexa Bank branches and branch status.
+                            </p>
+
+                        </div>
+
+
+                        <button id="refresh-admin-branches-btn" class="admin-refresh-btn" type="button">
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-filter-row">
+
+                        <input id="admin-branch-search" type="text"
+                            placeholder="Search branch ID, name, code, city, phone or address">
+
+
+                        <select id="admin-branch-status-filter">
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+                            <option value="ACTIVE">
+                                Active
+                            </option>
+
+                            <option value="INACTIVE">
+                                Inactive
+                            </option>
+
+                            <option value="CLOSED">
+                                Closed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Branch</th>
+                                    <th>Code</th>
+                                    <th>City</th>
+                                    <th>Phone</th>
+                                    <th>Manager</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="admin-branches-body">
+
+                                <tr>
+
+                                    <td colspan="9" class="admin-message-row">
+                                        Loading branches...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             ACCOUNT MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-accounts-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Account Management
+                        </h2>
+
+                        <p>
+                            Bank-wide account and balance monitoring.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-accounts-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-filter-row">
+
+                    <input id="admin-account-search" type="text"
+                        placeholder="Account ID, account number, customer or branch">
+
+
+                    <select id="admin-account-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="INACTIVE">
+                            Inactive
+                        </option>
+
+                        <option value="BLOCKED">
+                            Blocked
+                        </option>
+
+                        <option value="CLOSED">
+                            Closed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Account Number</th>
+                                <th>Customer</th>
+                                <th>Branch</th>
+                                <th>Type</th>
+                                <th>Balance</th>
+                                <th>Available</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-accounts-body">
+
+                            <tr>
+
+                                <td colspan="8" class="admin-message-row">
+                                    Loading accounts...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             TRANSACTION MONITORING
+        ================================================== -->
+
+            <section id="admin-transactions-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Transaction Monitoring
+                        </h2>
+
+                        <p>
+                            Bank-wide debit and credit transaction activity.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-transactions-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-filter-row">
+
+                    <input id="admin-transaction-search" type="text"
+                        placeholder="Reference, transaction ID, account or description">
+
+
+                    <select id="admin-transaction-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="SUCCESS">
+                            Success
+                        </option>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="FAILED">
+                            Failed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Transaction</th>
+                                <th>Reference</th>
+                                <th>Type</th>
+                                <th>Account</th>
+                                <th>Entry</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-transactions-body">
+
+                            <tr>
+
+                                <td colspan="8" class="admin-message-row">
+                                    Loading transactions...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             LOAN MANAGEMENT
+        ================================================== -->
+
+            <section id="admin-loans-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Loan Management
+                        </h2>
+
+                        <p>
+                            Bank-wide loan portfolio monitoring.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-loans-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-loan-summary">
+
+                    <div>
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <strong id="admin-loan-app-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Created Loans
+                        </span>
+
+                        <strong id="admin-created-loan-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Active
+                        </span>
+
+                        <strong id="admin-active-loan-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Defaulted
+                        </span>
+
+                        <strong id="admin-defaulted-loan-count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Outstanding
+                        </span>
+
+                        <strong id="admin-loan-outstanding">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-filter-row">
+
+                    <input id="admin-loan-search" type="text" placeholder="Loan ID, customer ID, loan type or account">
+
+
+                    <select id="admin-loan-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="APPROVED">
+                            Approved
+                        </option>
+
+                        <option value="ACTIVE">
+                            Active
+                        </option>
+
+                        <option value="COMPLETED">
+                            Completed
+                        </option>
+
+                        <option value="DEFAULTED">
+                            Defaulted
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Loan</th>
+                                <th>Customer</th>
+                                <th>Type</th>
+                                <th>Principal</th>
+                                <th>Outstanding</th>
+                                <th>Interest</th>
+                                <th>EMI</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-loans-body">
+
+                            <tr>
+
+                                <td colspan="8" class="admin-message-row">
+                                    Loading loans...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             SYSTEM REPORTS
+        ================================================== -->
+
+            <section id="admin-reports-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            System Reports
+                        </h2>
+
+                        <p>
+                            Bank-wide operational and financial summary.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-reports-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh All
+                    </button>
+
+                </div>
+
+
+                <div class="admin-report-grid">
+
+                    <div>
+                        <span>Total Customers</span>
+                        <strong id="report-admin-customers">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Active Customers</span>
+                        <strong id="report-admin-active-customers">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Employees</span>
+                        <strong id="report-admin-employees">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Branches</span>
+                        <strong id="report-admin-branches">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Accounts</span>
+                        <strong id="report-admin-accounts">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Deposits</span>
+                        <strong id="report-admin-deposits">৳0.00</strong>
+                    </div>
+
+                    <div>
+                        <span>Loans</span>
+                        <strong id="report-admin-loans">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Loan Principal</span>
+                        <strong id="report-admin-principal">৳0.00</strong>
+                    </div>
+
+                    <div>
+                        <span>Outstanding Loans</span>
+                        <strong id="report-admin-outstanding">৳0.00</strong>
+                    </div>
+
+                    <div>
+                        <span>Transactions</span>
+                        <strong id="report-admin-transactions">0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             AUDIT LOGS
+        ================================================== -->
+
+            <section id="admin-audit-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Audit Logs
+                        </h2>
+
+                        <p>
+                            System actions and database entity changes.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-audit-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-filter-row single-filter">
+
+                    <input id="admin-audit-search" type="text" placeholder="Search action, entity, ID or user">
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Log ID</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Entity</th>
+                                <th>Entity ID</th>
+                                <th>Time</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-audit-body">
+
+                            <tr>
+
+                                <td colspan="6" class="admin-message-row">
+                                    Loading audit logs...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             SYSTEM EVENTS
+        ================================================== -->
+
+            <section id="admin-notifications-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Notifications / System Events
+                        </h2>
+
+                        <p>
+                            Monitor system-generated notifications.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refresh-admin-notifications-btn" class="admin-refresh-btn" type="button">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="admin-table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Type</th>
+                                <th>Created</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-notifications-body">
+
+                            <tr>
+
+                                <td colspan="6" class="admin-message-row">
+                                    Loading system events...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+            <section id="admin-profile-section" class="admin-section admin-card">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <h2>
+                            Administrator Profile
+                        </h2>
+
+                        <p>
+                            Logged-in Nexa Bank administrator information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-profile-card">
+
+                    <div class="admin-profile-avatar">
+                        🛡️
+                    </div>
+
+
+                    <div>
+
+                        <h2 id="admin-profile-name">
+                            Administrator
+                        </h2>
+
+                        <p id="admin-profile-position">
+                            System Administrator
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-detail-grid">
+
+                    <div>
+                        <span>Employee ID</span>
+                        <strong id="admin-profile-employee-id">-</strong>
+                    </div>
+
+                    <div>
+                        <span>User ID</span>
+                        <strong id="admin-profile-user-id">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Department</span>
+                        <strong id="admin-profile-department">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Position</span>
+                        <strong id="admin-profile-position-name">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Branch</span>
+                        <strong id="admin-profile-branch">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Status</span>
+                        <strong id="admin-profile-status">-</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

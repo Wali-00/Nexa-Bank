@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Notifications</title>
+
+    <link rel="stylesheet" href="css/customerCss.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                CUSTOMER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="customer-dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="accounts.html">
+                        💳 My Accounts
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transactions.html">
+                        📊 Transactions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="transfer.html">
+                        💸 Transfer Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beneficiaries.html">
+                        👥 Nominees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="loans.html">
+                        🏦 Loans
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cards.html">
+                        💳 Cards
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bills.html">
+                        🧾 Bill Payments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixed-deposits.html">
+                        📈 Fixed Deposits
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html" class="active">
+                        🔔 Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        👤 Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="logoutBtn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <h1>
+                    Notifications
+                </h1>
+
+                <div class="profile-box">
+
+                    👤
+
+                    <span id="topbar-name">
+                        Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-card">
+
+                <h2>
+                    Your Notifications
+                </h2>
+
+                <p>
+                    Stay updated on account activity,
+                    payments, loans, fixed deposits,
+                    approvals and other banking events.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Notifications
+                    </h3>
+
+                    <div class="value" id="total-notifications">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Unread
+                    </h3>
+
+                    <div class="value" id="unread-notifications">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Read
+                    </h3>
+
+                    <div class="value" id="read-notifications">
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Notification Filters
+                    </h2>
+
+                </div>
+
+
+                <div class="notification-filter-bar">
+
+                    <button type="button" class="notification-filter-btn active" data-filter="ALL">
+                        All
+                    </button>
+
+
+                    <button type="button" class="notification-filter-btn" data-filter="UNREAD">
+                        Unread
+                    </button>
+
+
+                    <button type="button" class="notification-filter-btn" data-filter="READ">
+                        Read
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="section-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Notification History
+                    </h2>
+
+                </div>
+
+
+                <div id="notifications-list" class="full-notification-list">
+
+                    <p>
+                        Loading notifications...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/customer-theme.js"></script>
+    <script src="js/notifications.js"></script>
+
+</body>
+
+</html>

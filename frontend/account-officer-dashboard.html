@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexa Bank - Account Officer Dashboard</title>
+
+    <link rel="stylesheet" href="css/accountOfficer.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="bank-logo">
+                🏛 NEXA BANK
+            </div>
+
+            <div class="user-role">
+                ACCOUNT OFFICER PORTAL
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="#" class="officer-nav-link active" data-section="dashboard-section">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="officer-nav-link" data-section="applications-section">
+                        📄 Account Applications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="officer-nav-link" data-section="customer-management-section">
+                        👥 Customer Management
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kyc-verification.html" class="officer-nav-link" data-section="kyc-section">
+                        ✓ KYC Verification
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="officer-nav-link" data-section="deposit-section">
+                        💰 Add Money
+                    </a>
+                </li>
+
+                
+
+                <li>
+                    <a href="#" class="officer-nav-link" data-section="reports-section">
+                        📈 Reports
+                    </a>
+                </li>
+
+                <li class="logout">
+
+                    <a href="login.html" id="officer-logout-btn">
+                        🚪 Logout
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <div class="topbar">
+
+                <h1>
+                    Account Officer Dashboard
+                </h1>
+
+                <div class="profile-box">
+                    💼 Account Officer
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DASHBOARD OVERVIEW
+            ================================================== -->
+
+            <section id="dashboard-section" class="officer-section active-section">
+
+                <div class="welcome-card">
+
+                    <h2>
+                        Welcome, Account Officer
+                    </h2>
+
+                    <p>
+                        Review customer applications,
+                        manage customer accounts,
+                        verify KYC and process deposits.
+                    </p>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Applications
+                        </h3>
+
+                        <div class="stat-value" id="total-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Submitted
+                        </h3>
+
+                        <div class="stat-value" id="submitted-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Approved
+                        </h3>
+
+                        <div class="stat-value" id="approved-applications">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Rejected
+                        </h3>
+
+                        <div class="stat-value" id="rejected-applications">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p class="section-description">
+                                Open the main Account Officer tools.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="officer-quick-actions">
+
+                        <button type="button" class="officer-quick-action" data-open-section="applications-section">
+                            📄
+                            <strong>
+                                Applications
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="officer-quick-action"
+                            data-open-section="customer-management-section">
+                            👥
+                            <strong>
+                                Customers
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="officer-quick-action" data-open-section="kyc-section">
+                            ✓
+                            <strong>
+                                KYC
+                            </strong>
+                        </button>
+
+
+                        <button type="button" class="officer-quick-action" data-open-section="deposit-section">
+                            💰
+                            <strong>
+                                Add Money
+                            </strong>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT APPLICATIONS
+            ================================================== -->
+
+            <section id="applications-section" class="officer-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Account Applications
+                        </h2>
+
+                        <p class="section-description">
+                            Review and process customer account opening applications.
+                        </p>
+
+                    </div>
+
+
+                    <button class="refresh-btn" onclick="loadApplications()">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Application ID
+                                </th>
+
+                                <th>
+                                    Customer ID
+                                </th>
+
+                                <th>
+                                    Account Type
+                                </th>
+
+                                <th>
+                                    Branch
+                                </th>
+
+                                <th>
+                                    Submitted At
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="applications-body">
+
+                            <tr>
+
+                                <td colspan="7" class="message-row">
+                                    Loading applications...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="database-status" id="database-status">
+                    Connecting to Nexa Bank database...
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER MANAGEMENT
+            ================================================== -->
+
+            <section id="customer-management-section" class="officer-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Management
+                        </h2>
+
+                        <p class="section-description">
+                            Search customers using customer ID,
+                            name, email, phone, NID or account number.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-search-bar">
+
+                    <div class="customer-search-input">
+
+                        <label for="officer-customer-search">
+                            Search Customer
+                        </label>
+
+                        <input type="text" id="officer-customer-search"
+                            placeholder="Customer ID, name, email, phone, NID or account number" autocomplete="off">
+
+                    </div>
+
+
+                    <button type="button" id="officer-customer-search-btn" class="customer-search-btn">
+                        🔎 Search Customer
+                    </button>
+
+                </div>
+
+
+                <p id="customer-search-message" class="customer-search-message"></p>
+
+
+                <div id="customer-search-results" class="customer-search-results"></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 KYC VERIFICATION
+            ================================================== -->
+
+            <section id="kyc-section" class="officer-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            KYC Verification
+                        </h2>
+
+                        <p class="section-description">
+                            Review customer KYC information
+                            and verification status.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="refresh-btn" id="kyc-refresh-btn">
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- KYC STATISTICS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total KYC
+                        </h3>
+
+                        <div class="stat-value" id="kyc-total">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Pending
+                        </h3>
+
+                        <div class="stat-value" id="kyc-pending">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Verified
+                        </h3>
+
+                        <div class="stat-value" id="kyc-verified">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Rejected
+                        </h3>
+
+                        <div class="stat-value" id="kyc-rejected">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="kyc-filter-row">
+
+                    <input type="text" id="kyc-search" placeholder="Search KYC ID, customer ID or application ID">
+
+
+                    <select id="kyc-status-filter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="VERIFIED">
+                            Verified
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                        <option value="DOCUMENT_REQUIRED">
+                            Document Required
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- KYC RECORDS -->
+
+                <div id="kyc-records-container" class="kyc-records-container">
+
+                    <div class="customer-search-loading">
+                        Loading KYC records...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CASH DEPOSIT
+            ================================================== -->
+
+            <section id="deposit-section" class="officer-section section-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Cash Deposit
+                        </h2>
+
+                        <p class="section-description">
+                            Find a customer by account number
+                            and deposit money into their account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT SEARCH -->
+
+                <div class="deposit-search-box">
+
+
+                    <div class="deposit-search-input">
+
+                        <label for="deposit-account-number">
+                            Customer Account Number
+                        </label>
+
+                        <input type="text" id="deposit-account-number" placeholder="Enter account number"
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <button type="button" id="search-deposit-account-btn" class="search-account-btn">
+                        🔎 Search Account
+                    </button>
+
+                </div>
+
+
+                <p id="deposit-search-message" class="deposit-message"></p>
+
+
+                <!-- ACCOUNT PREVIEW -->
+
+                <div id="deposit-account-preview" class="deposit-account-preview" style="display: none;">
+
+                    <div class="deposit-preview-header">
+
+                        <div>
+
+                            <span class="deposit-preview-label">
+                                Customer
+                            </span>
+
+                            <h3 id="deposit-customer-name">
+                                -
+                            </h3>
+
+                        </div>
+
+
+                        <span id="deposit-account-status" class="deposit-status-badge">
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="deposit-preview-grid">
+
+
+                        <div>
+
+                            <span>
+                                Account Number
+                            </span>
+
+                            <strong id="deposit-preview-account-number">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Customer ID
+                            </span>
+
+                            <strong id="deposit-preview-customer-id">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Current Balance
+                            </span>
+
+                            <strong id="deposit-preview-balance">
+                                ৳0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Available Balance
+                            </span>
+
+                            <strong id="deposit-preview-available">
+                                ৳0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Customer Status
+                            </span>
+
+                            <strong id="deposit-preview-customer-status">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Account ID
+                            </span>
+
+                            <strong id="deposit-preview-account-id">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DEPOSIT FORM -->
+
+                    <form id="officer-deposit-form">
+
+                        <div class="deposit-form-grid">
+
+
+                            <div class="deposit-form-group">
+
+                                <label for="officer-deposit-amount">
+                                    Deposit Amount
+                                </label>
+
+                                <input type="number" id="officer-deposit-amount" min="0.01" step="0.01"
+                                    placeholder="Enter amount" required>
+
+                            </div>
+
+
+                            <div class="deposit-form-group">
+
+                                <label for="officer-deposit-description">
+                                    Description
+                                </label>
+
+                                <input type="text" id="officer-deposit-description"
+                                    placeholder="e.g. Cash deposit at branch">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="deposit-actions">
+
+
+                            <button type="submit" id="confirm-deposit-btn" class="confirm-deposit-btn">
+                                💰 Add Money
+                            </button>
+
+
+                            <button type="button" id="cancel-deposit-btn" class="cancel-deposit-btn">
+                                ✕ Cancel
+                            </button>
+
+                        </div>
+
+
+                        <p id="deposit-result-message" class="deposit-message"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- DEPOSIT RECEIPT -->
+
+                <div class="deposit-receipt-card" id="deposit-receipt-card" style="display: none;">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Deposit Receipt
+                        </h2>
+
+                    </div>
+
+
+                    <div class="deposit-receipt-grid">
+
+
+                        <div>
+
+                            <span>
+                                Customer
+                            </span>
+
+                            <strong id="receipt-customer-name">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Account Number
+                            </span>
+
+                            <strong id="receipt-account-number">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Transaction ID
+                            </span>
+
+                            <strong id="receipt-transaction-id">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Reference Number
+                            </span>
+
+                            <strong id="receipt-reference-number">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Previous Balance
+                            </span>
+
+                            <strong id="receipt-previous-balance">
+                                ৳0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Deposit Amount
+                            </span>
+
+                            <strong id="receipt-deposit-amount" class="receipt-deposit-amount">
+                                +৳0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                New Balance
+                            </span>
+
+                            <strong id="receipt-new-balance">
+                                ৳0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong id="receipt-deposit-status" class="receipt-success">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+           
+
+
+            <!-- =================================================
+                 REPORTS
+            ================================================== -->
+            
+
+            <section id="reports-section" class="officer-section">
+
+                <!-- REPORT HEADER -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Account Officer Reports
+                            </h2>
+
+                            <p class="section-description">
+                                Operational summary of customers,
+                                accounts, applications, KYC and transactions.
+                            </p>
+
+                        </div>
+
+
+                        <button type="button" class="refresh-btn" id="refresh-reports-btn">
+                            ↻ Refresh Reports
+                        </button>
+
+                    </div>
+
+
+                    <div id="reports-status-message" class="database-status">
+                        Ready to load report data.
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         MAIN SUMMARY
+    =========================================== -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Customers
+                        </h3>
+
+                        <div class="stat-value" id="report-total-customers">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Accounts
+                        </h3>
+
+                        <div class="stat-value" id="report-total-accounts">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Balance
+                        </h3>
+
+                        <div class="stat-value report-money-value" id="report-total-balance">
+                            ৳0.00
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>
+                            Total Transactions
+                        </h3>
+
+                        <div class="stat-value" id="report-total-transactions">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         ACCOUNT STATUS REPORT
+    =========================================== -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Account Status Summary
+                            </h2>
+
+                            <p class="section-description">
+                                Current status distribution of customer accounts.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-summary-grid">
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Active
+                            </span>
+
+                            <strong id="report-active-accounts" class="report-green">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Pending
+                            </span>
+
+                            <strong id="report-pending-accounts" class="report-orange">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Frozen
+                            </span>
+
+                            <strong id="report-frozen-accounts" class="report-blue">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Closed
+                            </span>
+
+                            <strong id="report-closed-accounts" class="report-red">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         APPLICATION REPORT
+    =========================================== -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Account Application Summary
+                            </h2>
+
+                            <p class="section-description">
+                                Current account application processing status.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-summary-grid">
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="report-total-applications">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Submitted
+                            </span>
+
+                            <strong id="report-submitted-applications" class="report-orange">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Under Review
+                            </span>
+
+                            <strong id="report-review-applications" class="report-blue">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Approved
+                            </span>
+
+                            <strong id="report-approved-applications" class="report-green">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Rejected
+                            </span>
+
+                            <strong id="report-rejected-applications" class="report-red">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         KYC REPORT
+    =========================================== -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                KYC Summary
+                            </h2>
+
+                            <p class="section-description">
+                                Current customer verification status.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-summary-grid">
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Total KYC
+                            </span>
+
+                            <strong id="report-total-kyc">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Pending
+                            </span>
+
+                            <strong id="report-pending-kyc" class="report-orange">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Verified
+                            </span>
+
+                            <strong id="report-verified-kyc" class="report-green">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Document Required
+                            </span>
+
+                            <strong id="report-document-kyc" class="report-blue">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-summary-item">
+
+                            <span>
+                                Rejected
+                            </span>
+
+                            <strong id="report-rejected-kyc" class="report-red">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         ACCOUNT TYPE DISTRIBUTION
+    =========================================== -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Account Type Distribution
+                            </h2>
+
+                            <p class="section-description">
+                                Number of accounts by account type.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="applications-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Account Type</th>
+                                    <th>Total Accounts</th>
+                                    <th>Total Balance</th>
+                                    <th>Available Balance</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="report-account-type-body">
+
+                                <tr>
+
+                                    <td colspan="4" class="message-row">
+                                        Loading report...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+         RECENT TRANSACTIONS
+    =========================================== -->
+
+                <div class="section-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Transactions
+                            </h2>
+
+                            <p class="section-description">
+                                Latest transaction activity recorded by Nexa Bank.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="applications-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Reference</th>
+                                    <th>Type ID</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="report-transaction-body">
+
+                                <tr>
+
+                                    <td colspan="6" class="message-row">
+                                        Loading transactions...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+    <!-- =====================================================
+     KYC REVIEW MODAL
+====================================================== -->
+
+    <div id="kyc-review-modal" class="kyc-modal">
+
+        <div class="kyc-modal-content">
+
+            <div class="kyc-modal-header">
+
+                <div>
+
+                    <span class="officer-customer-label">
+                        KYC Review
+                    </span>
+
+                    <h2>
+                        Review KYC
+                    </h2>
+
+                </div>
+
+
+                <button type="button" id="close-kyc-modal" class="customer-close-result">
+                    ✕ Close
+                </button>
+
+            </div>
+
+
+            <div class="kyc-review-summary">
+
+                <div>
+                    <span>KYC ID</span>
+                    <strong id="review-kyc-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Customer ID</span>
+                    <strong id="review-customer-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Application ID</span>
+                    <strong id="review-application-id">-</strong>
+                </div>
+
+                <div>
+                    <span>Current Status</span>
+                    <strong id="review-current-status">-</strong>
+                </div>
+
+            </div>
+
+
+            <form id="kyc-review-form">
+
+                <div class="deposit-form-group">
+
+                    <label for="review-status">
+                        New Status
+                    </label>
+
+                    <select id="review-status" required>
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="VERIFIED">
+                            Verified
+                        </option>
+
+                        <option value="REJECTED">
+                            Rejected
+                        </option>
+
+                        <option value="DOCUMENT_REQUIRED">
+                            Document Required
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="deposit-form-group">
+
+                    <label for="review-remarks">
+                        Remarks
+                    </label>
+
+                    <textarea id="review-remarks" rows="4" placeholder="Enter review remarks..."></textarea>
+
+                </div>
+
+
+                <div class="deposit-actions">
+
+                    <button type="submit" id="submit-kyc-review" class="confirm-deposit-btn">
+                        ✓ Save Review
+                    </button>
+
+
+                    <button type="button" id="cancel-kyc-review" class="cancel-deposit-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <p id="kyc-review-message" class="deposit-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+    
+
+    <!-- ACCOUNT OFFICER MAIN LOGIC -->
+    <script src="js/account-officer-dashboard.js"></script>
+
+
+    <!-- DEPOSIT LOGIC -->
+    <script src="js/account-officer-deposit.js"></script>
+    <script src="js/kyc-verification.js"></script>
+    <script src="js/account-management.js"></script>
+    <script src="js/account-officer-reports.js"></script>
+
+</body>
+
+</html>
